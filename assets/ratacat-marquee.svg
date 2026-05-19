@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 360">
-  <title id="title">ratacat animated green block marquee</title>
-  <desc id="desc">Green blocks slide in through invisible channels to form ratacat, the subtitle appears, then the blocks fade out.</desc>
+  <title id="title">ratacat animated green tile routes</title>
+  <desc id="desc">Individual green tiles travel along separate stepped paths to assemble ratacat, hold bright with a green glow, then fade away.</desc>
   <defs>
     <linearGradient id="backdrop" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0" stop-color="#05080d"/>
@@ -12,10 +12,11 @@
       <rect x="42" y="42" width="1116" height="276" rx="14"/>
     </clipPath>
 
-    <filter id="soft-green" x="-12%" y="-18%" width="124%" height="136%">
-      <feGaussianBlur stdDeviation="1.15" result="blur"/>
+    <filter id="arrival-glow" x="-18%" y="-28%" width="136%" height="156%">
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.22 0 0 0 0 0.95 0 0 0 0 0.35 0 0 0 .85 0" result="greenBlur"/>
       <feMerge>
-        <feMergeNode in="blur"/>
+        <feMergeNode in="greenBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
@@ -24,70 +25,4758 @@
 
     <style>
       .bit {
-        animation: channel-in 7.8s cubic-bezier(.2,.82,.2,1) infinite;
-        animation-delay: var(--delay, 0ms);
+        animation-duration: 13.2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
         opacity: 0;
         transform-box: fill-box;
         transform-origin: center;
       }
 
-      .g0 { fill: #2ea043; }
-      .g1 { fill: #39d353; }
-      .g2 { fill: #56d364; }
-      .g3 { fill: #7ee787; }
-      .g4 { fill: #9be9a8; }
-
-      .lane-left { --ix: -330px; --iy: 0px; }
-      .lane-right { --ix: 330px; --iy: 0px; }
-      .lane-top { --ix: 0px; --iy: -180px; }
-      .lane-bottom { --ix: 0px; --iy: 180px; }
-      .lane-left-deep { --ix: -460px; --iy: 0px; }
-      .lane-right-deep { --ix: 460px; --iy: 0px; }
-      .lane-top-soft { --ix: 0px; --iy: -130px; }
-      .lane-bottom-soft { --ix: 0px; --iy: 130px; }
+      .word-glow {
+        animation: glow-hold 13.2s linear infinite;
+        opacity: 0;
+      }
 
       .subtitle {
-        animation: subtitle-pop 7.8s ease-in-out infinite;
+        animation: subtitle-pop 13.2s ease-in-out infinite;
         opacity: 0;
         transform-box: fill-box;
         transform-origin: center;
       }
 
-      @keyframes channel-in {
-        0% {
+      .tile-0 { animation-name: tile-0; }
+      .tile-1 { animation-name: tile-1; }
+      .tile-2 { animation-name: tile-2; }
+      .tile-3 { animation-name: tile-3; }
+      .tile-4 { animation-name: tile-4; }
+      .tile-5 { animation-name: tile-5; }
+      .tile-6 { animation-name: tile-6; }
+      .tile-7 { animation-name: tile-7; }
+      .tile-8 { animation-name: tile-8; }
+      .tile-9 { animation-name: tile-9; }
+      .tile-10 { animation-name: tile-10; }
+      .tile-11 { animation-name: tile-11; }
+      .tile-12 { animation-name: tile-12; }
+      .tile-13 { animation-name: tile-13; }
+      .tile-14 { animation-name: tile-14; }
+      .tile-15 { animation-name: tile-15; }
+      .tile-16 { animation-name: tile-16; }
+      .tile-17 { animation-name: tile-17; }
+      .tile-18 { animation-name: tile-18; }
+      .tile-19 { animation-name: tile-19; }
+      .tile-20 { animation-name: tile-20; }
+      .tile-21 { animation-name: tile-21; }
+      .tile-22 { animation-name: tile-22; }
+      .tile-23 { animation-name: tile-23; }
+      .tile-24 { animation-name: tile-24; }
+      .tile-25 { animation-name: tile-25; }
+      .tile-26 { animation-name: tile-26; }
+      .tile-27 { animation-name: tile-27; }
+      .tile-28 { animation-name: tile-28; }
+      .tile-29 { animation-name: tile-29; }
+      .tile-30 { animation-name: tile-30; }
+      .tile-31 { animation-name: tile-31; }
+      .tile-32 { animation-name: tile-32; }
+      .tile-33 { animation-name: tile-33; }
+      .tile-34 { animation-name: tile-34; }
+      .tile-35 { animation-name: tile-35; }
+      .tile-36 { animation-name: tile-36; }
+      .tile-37 { animation-name: tile-37; }
+      .tile-38 { animation-name: tile-38; }
+      .tile-39 { animation-name: tile-39; }
+      .tile-40 { animation-name: tile-40; }
+      .tile-41 { animation-name: tile-41; }
+      .tile-42 { animation-name: tile-42; }
+      .tile-43 { animation-name: tile-43; }
+      .tile-44 { animation-name: tile-44; }
+      .tile-45 { animation-name: tile-45; }
+      .tile-46 { animation-name: tile-46; }
+      .tile-47 { animation-name: tile-47; }
+      .tile-48 { animation-name: tile-48; }
+      .tile-49 { animation-name: tile-49; }
+      .tile-50 { animation-name: tile-50; }
+      .tile-51 { animation-name: tile-51; }
+      .tile-52 { animation-name: tile-52; }
+      .tile-53 { animation-name: tile-53; }
+      .tile-54 { animation-name: tile-54; }
+      .tile-55 { animation-name: tile-55; }
+      .tile-56 { animation-name: tile-56; }
+      .tile-57 { animation-name: tile-57; }
+      .tile-58 { animation-name: tile-58; }
+      .tile-59 { animation-name: tile-59; }
+      .tile-60 { animation-name: tile-60; }
+      .tile-61 { animation-name: tile-61; }
+      .tile-62 { animation-name: tile-62; }
+      .tile-63 { animation-name: tile-63; }
+      .tile-64 { animation-name: tile-64; }
+      .tile-65 { animation-name: tile-65; }
+      .tile-66 { animation-name: tile-66; }
+      .tile-67 { animation-name: tile-67; }
+      .tile-68 { animation-name: tile-68; }
+      .tile-69 { animation-name: tile-69; }
+      .tile-70 { animation-name: tile-70; }
+      .tile-71 { animation-name: tile-71; }
+      .tile-72 { animation-name: tile-72; }
+      .tile-73 { animation-name: tile-73; }
+      .tile-74 { animation-name: tile-74; }
+      .tile-75 { animation-name: tile-75; }
+      .tile-76 { animation-name: tile-76; }
+      .tile-77 { animation-name: tile-77; }
+      .tile-78 { animation-name: tile-78; }
+      .tile-79 { animation-name: tile-79; }
+      .tile-80 { animation-name: tile-80; }
+      .tile-81 { animation-name: tile-81; }
+      .tile-82 { animation-name: tile-82; }
+      .tile-83 { animation-name: tile-83; }
+      .tile-84 { animation-name: tile-84; }
+      .tile-85 { animation-name: tile-85; }
+      .tile-86 { animation-name: tile-86; }
+      .tile-87 { animation-name: tile-87; }
+      .tile-88 { animation-name: tile-88; }
+      .tile-89 { animation-name: tile-89; }
+      .tile-90 { animation-name: tile-90; }
+      .tile-91 { animation-name: tile-91; }
+      .tile-92 { animation-name: tile-92; }
+      .tile-93 { animation-name: tile-93; }
+      .tile-94 { animation-name: tile-94; }
+      .tile-95 { animation-name: tile-95; }
+      .tile-96 { animation-name: tile-96; }
+      .tile-97 { animation-name: tile-97; }
+      .tile-98 { animation-name: tile-98; }
+      .tile-99 { animation-name: tile-99; }
+      .tile-100 { animation-name: tile-100; }
+      .tile-101 { animation-name: tile-101; }
+      .tile-102 { animation-name: tile-102; }
+      .tile-103 { animation-name: tile-103; }
+      .tile-104 { animation-name: tile-104; }
+      .tile-105 { animation-name: tile-105; }
+      .tile-106 { animation-name: tile-106; }
+
+      @keyframes tile-0 {
+        0%, 0% {
           opacity: 0;
-          transform: translate(var(--ix), var(--iy)) scale(.72);
+          fill: #0f3b21;
+          transform: translate(-216px, -108px) scale(0.68);
         }
-        17% {
-          opacity: .95;
+        1.2% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-216px, -108px) scale(0.76);
         }
-        34%, 58% {
+        5.58% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-216px, -72px) scale(0.84);
+        }
+        11.78% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-126px, -72px) scale(0.9);
+        }
+        17.98% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-126px, -36px) scale(0.96);
+        }
+        24.18% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -36px) scale(1);
+        }
+        31%, 78% {
           opacity: 1;
+          fill: #b7ffbe;
           transform: translate(0, 0) scale(1);
         }
-        100% {
+        92%, 100% {
           opacity: 0;
+          fill: #b7ffbe;
           transform: translate(0, 0) scale(1);
         }
+      }
+
+      @keyframes tile-1 {
+        0%, 1.9% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-216px, -198px) scale(0.68);
+        }
+        3.1% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-216px, -198px) scale(0.76);
+        }
+        7.86% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-162px, -198px) scale(0.84);
+        }
+        14.48% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-162px, -54px) scale(0.9);
+        }
+        21.1% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(18px, -54px) scale(0.96);
+        }
+        27.72% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(18px, 0px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-2 {
+        0%, 3.8% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-216px, -54px) scale(0.68);
+        }
+        5% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-216px, -54px) scale(0.76);
+        }
+        9.06% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-216px, -18px) scale(0.84);
+        }
+        14.9% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-126px, -18px) scale(0.9);
+        }
+        20.74% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-126px, -18px) scale(0.96);
+        }
+        26.58% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -18px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-3 {
+        0%, 5.7% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-216px, -198px) scale(0.68);
+        }
+        6.9% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-216px, -198px) scale(0.76);
+        }
+        10.25% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-162px, -198px) scale(0.84);
+        }
+        15.31% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-162px, -54px) scale(0.9);
+        }
+        20.37% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(18px, -54px) scale(0.96);
+        }
+        25.43% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(18px, 0px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-4 {
+        0%, 6.39% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(306px, 252px) scale(0.68);
+        }
+        7.59% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(306px, 252px) scale(0.76);
+        }
+        11% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(270px, 252px) scale(0.84);
+        }
+        16.12% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(270px, 144px) scale(0.9);
+        }
+        21.24% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(90px, 144px) scale(0.96);
+        }
+        26.37% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(90px, 0px) scale(1);
+        }
+        32%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-5 {
+        0%, 2.28% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-288px, 54px) scale(0.68);
+        }
+        3.48% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-288px, 54px) scale(0.76);
+        }
+        7.81% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-216px, 54px) scale(0.84);
+        }
+        13.95% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-216px, 18px) scale(0.9);
+        }
+        20.1% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(36px, 18px) scale(0.96);
+        }
+        26.24% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(36px, 0px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-6 {
+        0%, 2.44% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-252px, -198px) scale(0.68);
+        }
+        3.64% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-252px, -198px) scale(0.76);
+        }
+        7.94% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-252px, -162px) scale(0.84);
+        }
+        14.05% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-144px, -162px) scale(0.9);
+        }
+        20.16% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-144px, -72px) scale(0.96);
+        }
+        26.28% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -72px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-7 {
+        0%, 5.93% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(234px, -216px) scale(0.68);
+        }
+        7.13% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(234px, -216px) scale(0.76);
+        }
+        10.98% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(198px, -216px) scale(0.84);
+        }
+        16.6% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(198px, -126px) scale(0.9);
+        }
+        22.21% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(72px, -126px) scale(0.96);
+        }
+        27.82% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(72px, 0px) scale(1);
+        }
+        34%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-8 {
+        0%, 6.09% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(396px, 18px) scale(0.68);
+        }
+        7.29% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(396px, 18px) scale(0.76);
+        }
+        11.11% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(396px, 18px) scale(0.84);
+        }
+        16.7% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(108px, 18px) scale(0.9);
+        }
+        22.28% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(108px, -18px) scale(0.96);
+        }
+        27.86% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -18px) scale(1);
+        }
+        34%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-9 {
+        0%, 0.39% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(396px, -216px) scale(0.68);
+        }
+        1.59% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(396px, -216px) scale(0.76);
+        }
+        6.08% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(360px, -216px) scale(0.84);
+        }
+        12.4% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(360px, -126px) scale(0.9);
+        }
+        18.72% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(126px, -126px) scale(0.96);
+        }
+        25.05% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(126px, 0px) scale(1);
+        }
+        32%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-10 {
+        0%, 2.29% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(396px, -54px) scale(0.68);
+        }
+        3.49% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(396px, -54px) scale(0.76);
+        }
+        8.36% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(396px, -36px) scale(0.84);
+        }
+        15.1% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(108px, -36px) scale(0.9);
+        }
+        21.84% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(108px, 54px) scale(0.96);
+        }
+        28.58% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 54px) scale(1);
+        }
+        36%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-11 {
+        0%, 4.19% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(396px, -216px) scale(0.68);
+        }
+        5.39% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(396px, -216px) scale(0.76);
+        }
+        9.56% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(360px, -216px) scale(0.84);
+        }
+        15.52% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(360px, -126px) scale(0.9);
+        }
+        21.48% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(126px, -126px) scale(0.96);
+        }
+        27.44% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(126px, 0px) scale(1);
+        }
+        34%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-12 {
+        0%, 4.88% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-288px, 0px) scale(0.68);
+        }
+        6.08% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-288px, 0px) scale(0.76);
+        }
+        10.3% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-288px, -36px) scale(0.84);
+        }
+        16.33% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-162px, -36px) scale(0.9);
+        }
+        22.35% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-162px, 0px) scale(0.96);
+        }
+        28.37% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 0px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-13 {
+        0%, 7.31% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-108px, 180px) scale(0.68);
+        }
+        8.51% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-108px, 180px) scale(0.76);
+        }
+        12.11% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-108px, 126px) scale(0.84);
+        }
+        17.45% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-18px, 126px) scale(0.9);
+        }
+        22.79% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-18px, -54px) scale(0.96);
+        }
+        28.13% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -54px) scale(1);
+        }
+        34%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-14 {
+        0%, 0.93% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(234px, -216px) scale(0.68);
+        }
+        2.13% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(234px, -216px) scale(0.76);
+        }
+        7.24% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(234px, -162px) scale(0.84);
+        }
+        14.26% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(54px, -162px) scale(0.9);
+        }
+        21.27% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(54px, 18px) scale(0.96);
+        }
+        28.28% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 18px) scale(1);
+        }
+        36%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-15 {
+        0%, 3.89% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(288px, 252px) scale(0.68);
+        }
+        5.09% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(288px, 252px) scale(0.76);
+        }
+        9.67% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(288px, 180px) scale(0.84);
+        }
+        16.09% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(72px, 180px) scale(0.9);
+        }
+        22.51% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(72px, -18px) scale(0.96);
+        }
+        28.94% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -18px) scale(1);
+        }
+        36%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-16 {
+        0%, 4.58% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(144px, -162px) scale(0.68);
+        }
+        5.78% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(144px, -162px) scale(0.76);
+        }
+        9.34% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(108px, -162px) scale(0.84);
+        }
+        14.62% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(108px, -54px) scale(0.9);
+        }
+        19.9% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-18px, -54px) scale(0.96);
+        }
+        25.19% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-18px, 0px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-17 {
+        0%, 0.47% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-18px, 180px) scale(0.68);
+        }
+        1.67% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-18px, 180px) scale(0.76);
+        }
+        6.15% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-18px, 126px) scale(0.84);
+        }
+        12.45% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(0px, 126px) scale(0.9);
+        }
+        18.76% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(0px, -36px) scale(0.96);
+        }
+        25.06% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -36px) scale(1);
+        }
+        32%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-18 {
+        0%, 2.39% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-396px, -198px) scale(0.68);
+        }
+        3.59% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-396px, -198px) scale(0.76);
+        }
+        7.72% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-396px, -144px) scale(0.84);
+        }
+        13.64% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-90px, -144px) scale(0.9);
+        }
+        19.56% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-90px, 36px) scale(0.96);
+        }
+        25.49% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 36px) scale(1);
+        }
+        32%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-19 {
+        0%, 4.29% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-396px, 90px) scale(0.68);
+        }
+        5.49% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-396px, 90px) scale(0.76);
+        }
+        10% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-360px, 90px) scale(0.84);
+        }
+        16.34% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-360px, 54px) scale(0.9);
+        }
+        22.68% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-126px, 54px) scale(0.96);
+        }
+        29.02% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-126px, 0px) scale(1);
+        }
+        36%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-20 {
+        0%, 6.19% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-396px, -198px) scale(0.68);
+        }
+        7.39% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-396px, -198px) scale(0.76);
+        }
+        11.2% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-396px, -144px) scale(0.84);
+        }
+        16.76% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-90px, -144px) scale(0.9);
+        }
+        22.32% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-90px, 18px) scale(0.96);
+        }
+        27.88% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 18px) scale(1);
+        }
+        34%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-21 {
+        0%, 6.88% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(288px, 252px) scale(0.68);
+        }
+        8.08% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(288px, 252px) scale(0.76);
+        }
+        11.94% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(216px, 252px) scale(0.84);
+        }
+        17.57% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(216px, 72px) scale(0.9);
+        }
+        23.19% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-36px, 72px) scale(0.96);
+        }
+        28.81% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-36px, 0px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-22 {
+        0%, 2.77% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-270px, -36px) scale(0.68);
+        }
+        3.97% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-270px, -36px) scale(0.76);
+        }
+        8.75% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-270px, -18px) scale(0.84);
+        }
+        15.4% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-72px, -18px) scale(0.9);
+        }
+        22.04% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-72px, 36px) scale(0.96);
+        }
+        28.69% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 36px) scale(1);
+        }
+        36%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-23 {
+        0%, 2.93% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-234px, -198px) scale(0.68);
+        }
+        4.13% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-234px, -198px) scale(0.76);
+        }
+        8.88% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-198px, -198px) scale(0.84);
+        }
+        15.5% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-198px, -108px) scale(0.9);
+        }
+        22.11% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-72px, -108px) scale(0.96);
+        }
+        28.72% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-72px, 0px) scale(1);
+        }
+        36%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-24 {
+        0%, 6.42% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(216px, -216px) scale(0.68);
+        }
+        7.62% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(216px, -216px) scale(0.76);
+        }
+        10.84% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(162px, -216px) scale(0.84);
+        }
+        15.76% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(162px, -54px) scale(0.9);
+        }
+        20.68% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-54px, -54px) scale(0.96);
+        }
+        25.59% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-54px, 0px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-25 {
+        0%, 6.58% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(378px, 108px) scale(0.68);
+        }
+        7.78% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(378px, 108px) scale(0.76);
+        }
+        10.98% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(378px, 72px) scale(0.84);
+        }
+        15.86% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(216px, 72px) scale(0.9);
+        }
+        20.74% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(216px, 36px) scale(0.96);
+        }
+        25.63% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 36px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-26 {
+        0%, 0.88% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(378px, -216px) scale(0.68);
+        }
+        2.08% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(378px, -216px) scale(0.76);
+        }
+        7.02% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(288px, -216px) scale(0.84);
+        }
+        13.85% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(288px, -54px) scale(0.9);
+        }
+        20.67% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-18px, -54px) scale(0.96);
+        }
+        27.49% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-18px, 0px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-27 {
+        0%, 2.78% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(378px, 36px) scale(0.68);
+        }
+        3.98% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(378px, 36px) scale(0.76);
+        }
+        8.22% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(378px, 0px) scale(0.84);
+        }
+        14.26% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(216px, 0px) scale(0.9);
+        }
+        20.31% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(216px, 18px) scale(0.96);
+        }
+        26.35% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 18px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-28 {
+        0%, 4.68% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(378px, -216px) scale(0.68);
+        }
+        5.88% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(378px, -216px) scale(0.76);
+        }
+        9.42% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(288px, -216px) scale(0.84);
+        }
+        14.68% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(288px, -54px) scale(0.9);
+        }
+        19.95% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-18px, -54px) scale(0.96);
+        }
+        25.21% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-18px, 0px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-29 {
+        0%, 6.58% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(378px, -18px) scale(0.68);
+        }
+        7.78% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(378px, -18px) scale(0.76);
+        }
+        11.7% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(378px, 18px) scale(0.84);
+        }
+        17.38% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(216px, 18px) scale(0.9);
+        }
+        23.06% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(216px, 0px) scale(0.96);
+        }
+        28.75% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 0px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-30 {
+        0%, 6.74% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(342px, -216px) scale(0.68);
+        }
+        7.94% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(342px, -216px) scale(0.76);
+        }
+        11.83% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(270px, -216px) scale(0.84);
+        }
+        17.48% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(270px, -54px) scale(0.9);
+        }
+        23.13% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-36px, -54px) scale(0.96);
+        }
+        28.78% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-36px, 0px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-31 {
+        0%, 2.63% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-324px, 234px) scale(0.68);
+        }
+        3.83% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-324px, 234px) scale(0.76);
+        }
+        8.64% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-324px, 180px) scale(0.84);
+        }
+        15.31% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-72px, 180px) scale(0.9);
+        }
+        21.98% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-72px, -36px) scale(0.96);
+        }
+        28.66% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -36px) scale(1);
+        }
+        36%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-32 {
+        0%, 2.79% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-72px, -162px) scale(0.68);
+        }
+        3.99% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-72px, -162px) scale(0.76);
+        }
+        8.77% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-36px, -162px) scale(0.84);
+        }
+        15.41% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-36px, -90px) scale(0.9);
+        }
+        22.05% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-18px, -90px) scale(0.96);
+        }
+        28.69% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-18px, 0px) scale(1);
+        }
+        36%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-33 {
+        0%, 6.28% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-162px, 180px) scale(0.68);
+        }
+        7.48% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-162px, 180px) scale(0.76);
+        }
+        10.73% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-126px, 180px) scale(0.84);
+        }
+        15.67% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-126px, 54px) scale(0.9);
+        }
+        20.62% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(54px, 54px) scale(0.96);
+        }
+        25.56% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(54px, 0px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-34 {
+        0%, 6.44% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(234px, 252px) scale(0.68);
+        }
+        7.64% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(234px, 252px) scale(0.76);
+        }
+        10.86% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(234px, 216px) scale(0.84);
+        }
+        15.77% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(144px, 216px) scale(0.9);
+        }
+        20.68% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(144px, 90px) scale(0.96);
+        }
+        25.6% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 90px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-35 {
+        0%, 2.33% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-216px, -90px) scale(0.68);
+        }
+        3.53% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-216px, -90px) scale(0.76);
+        }
+        7.67% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-180px, -90px) scale(0.84);
+        }
+        13.6% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-180px, -54px) scale(0.9);
+        }
+        19.54% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-72px, -54px) scale(0.96);
+        }
+        25.47% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-72px, 0px) scale(1);
+        }
+        32%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-36 {
+        0%, 3.72% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-126px, -162px) scale(0.68);
+        }
+        4.92% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-126px, -162px) scale(0.76);
+        }
+        8.63% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-126px, -126px) scale(0.84);
+        }
+        14.09% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-72px, -126px) scale(0.9);
+        }
+        19.54% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-72px, -54px) scale(0.96);
+        }
+        25% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -54px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-37 {
+        0%, 5.62% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-324px, 234px) scale(0.68);
+        }
+        6.82% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-324px, 234px) scale(0.76);
+        }
+        10.91% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-252px, 234px) scale(0.84);
+        }
+        16.78% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-252px, 72px) scale(0.9);
+        }
+        22.66% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(18px, 72px) scale(0.96);
+        }
+        28.54% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(18px, 0px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-38 {
+        0%, 7.52% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-18px, -162px) scale(0.68);
+        }
+        8.72% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-18px, -162px) scale(0.76);
+        }
+        12.11% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-18px, -126px) scale(0.84);
+        }
+        17.2% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-18px, -126px) scale(0.9);
+        }
+        22.3% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-18px, -54px) scale(0.96);
+        }
+        27.39% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -54px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-39 {
+        0%, 1.82% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-324px, 234px) scale(0.68);
+        }
+        3.02% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-324px, 234px) scale(0.76);
+        }
+        7.07% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-252px, 234px) scale(0.84);
+        }
+        12.91% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-252px, 72px) scale(0.9);
+        }
+        18.74% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(18px, 72px) scale(0.96);
+        }
+        24.58% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(18px, 0px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-40 {
+        0%, 3.72% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(54px, -162px) scale(0.68);
+        }
+        4.92% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(54px, -162px) scale(0.76);
+        }
+        9.35% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(54px, -126px) scale(0.84);
+        }
+        15.61% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(36px, -126px) scale(0.9);
+        }
+        21.86% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(36px, -54px) scale(0.96);
+        }
+        28.12% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -54px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-41 {
+        0%, 4.94% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-342px, -198px) scale(0.68);
+        }
+        6.14% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-342px, -198px) scale(0.76);
+        }
+        9.63% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-342px, -162px) scale(0.84);
+        }
+        14.84% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-198px, -162px) scale(0.9);
+        }
+        20.05% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-198px, -72px) scale(0.96);
+        }
+        25.27% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -72px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-42 {
+        0%, 7.22% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-216px, -198px) scale(0.68);
+        }
+        8.42% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-216px, -198px) scale(0.76);
+        }
+        12.22% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-162px, -198px) scale(0.84);
+        }
+        17.78% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-162px, -54px) scale(0.9);
+        }
+        23.33% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(54px, -54px) scale(0.96);
+        }
+        28.89% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(54px, 0px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-43 {
+        0%, 1.9% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-288px, -198px) scale(0.68);
+        }
+        3.1% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-288px, -198px) scale(0.76);
+        }
+        7.5% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-288px, -162px) scale(0.84);
+        }
+        13.72% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-162px, -162px) scale(0.9);
+        }
+        19.94% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-162px, -72px) scale(0.96);
+        }
+        26.16% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -72px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-44 {
+        0%, 4.18% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-360px, -198px) scale(0.68);
+        }
+        5.38% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-360px, -198px) scale(0.76);
+        }
+        9.01% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-288px, -198px) scale(0.84);
+        }
+        14.37% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-288px, -54px) scale(0.9);
+        }
+        19.74% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(36px, -54px) scale(0.96);
+        }
+        25.1% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(36px, 0px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-45 {
+        0%, 6.46% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-234px, -198px) scale(0.68);
+        }
+        7.66% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-234px, -198px) scale(0.76);
+        }
+        11.6% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-234px, -162px) scale(0.84);
+        }
+        17.31% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-144px, -162px) scale(0.9);
+        }
+        23.01% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-144px, -72px) scale(0.96);
+        }
+        28.72% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -72px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-46 {
+        0%, 1.14% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-306px, -198px) scale(0.68);
+        }
+        2.34% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-306px, -198px) scale(0.76);
+        }
+        6.87% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-234px, -198px) scale(0.84);
+        }
+        13.25% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-234px, -54px) scale(0.9);
+        }
+        19.62% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(18px, -54px) scale(0.96);
+        }
+        25.99% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(18px, 0px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-47 {
+        0%, 4.12% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(90px, 180px) scale(0.68);
+        }
+        5.32% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(90px, 180px) scale(0.76);
+        }
+        9.68% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(90px, 144px) scale(0.84);
+        }
+        15.85% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(54px, 144px) scale(0.9);
+        }
+        22.03% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(54px, 54px) scale(0.96);
+        }
+        28.21% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 54px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-48 {
+        0%, 6.02% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(396px, 252px) scale(0.68);
+        }
+        7.22% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(396px, 252px) scale(0.76);
+        }
+        10.88% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(306px, 252px) scale(0.84);
+        }
+        16.27% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(306px, 72px) scale(0.9);
+        }
+        21.67% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-18px, 72px) scale(0.96);
+        }
+        27.06% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-18px, 0px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-49 {
+        0%, 0.32% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(0px, 180px) scale(0.68);
+        }
+        1.52% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(0px, 180px) scale(0.76);
+        }
+        5.84% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(0px, 144px) scale(0.84);
+        }
+        11.98% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(0px, 144px) scale(0.9);
+        }
+        18.11% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(0px, 54px) scale(0.96);
+        }
+        24.25% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 54px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-50 {
+        0%, 1.01% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-288px, 234px) scale(0.68);
+        }
+        2.21% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-288px, 234px) scale(0.76);
+        }
+        6.59% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-288px, 180px) scale(0.84);
+        }
+        12.79% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-72px, 180px) scale(0.9);
+        }
+        18.98% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-72px, -18px) scale(0.96);
+        }
+        25.18% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -18px) scale(1);
+        }
+        32%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-51 {
+        0%, 4.5% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(270px, 252px) scale(0.68);
+        }
+        5.7% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(270px, 252px) scale(0.76);
+        }
+        9.63% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(270px, 216px) scale(0.84);
+        }
+        15.33% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(162px, 216px) scale(0.9);
+        }
+        21.03% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(162px, 90px) scale(0.96);
+        }
+        26.73% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 90px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-52 {
+        0%, 4.66% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(54px, 180px) scale(0.68);
+        }
+        5.86% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(54px, 180px) scale(0.76);
+        }
+        9.76% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(36px, 180px) scale(0.84);
+        }
+        15.43% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(36px, 54px) scale(0.9);
+        }
+        21.1% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-54px, 54px) scale(0.96);
+        }
+        26.77% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-54px, 0px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-53 {
+        0%, 0.55% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-216px, -198px) scale(0.68);
+        }
+        1.75% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-216px, -198px) scale(0.76);
+        }
+        6.57% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-216px, -144px) scale(0.84);
+        }
+        13.26% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-54px, -144px) scale(0.9);
+        }
+        19.95% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-54px, 36px) scale(0.96);
+        }
+        26.64% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 36px) scale(1);
+        }
+        34%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-54 {
+        0%, 0.71% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-378px, 18px) scale(0.68);
+        }
+        1.91% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-378px, 18px) scale(0.76);
+        }
+        6.7% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-342px, 18px) scale(0.84);
+        }
+        13.36% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-342px, 18px) scale(0.9);
+        }
+        20.02% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-126px, 18px) scale(0.96);
+        }
+        26.68% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-126px, 0px) scale(1);
+        }
+        34%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-55 {
+        0%, 2.61% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-378px, -198px) scale(0.68);
+        }
+        3.81% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-378px, -198px) scale(0.76);
+        }
+        7.9% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-378px, -144px) scale(0.84);
+        }
+        13.78% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-90px, -144px) scale(0.9);
+        }
+        19.66% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-90px, 36px) scale(0.96);
+        }
+        25.53% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 36px) scale(1);
+        }
+        32%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-56 {
+        0%, 4.51% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-378px, 72px) scale(0.68);
+        }
+        5.71% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-378px, 72px) scale(0.76);
+        }
+        10.18% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-342px, 72px) scale(0.84);
+        }
+        16.48% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-342px, 36px) scale(0.9);
+        }
+        22.77% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-126px, 36px) scale(0.96);
+        }
+        29.07% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-126px, 0px) scale(1);
+        }
+        36%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-57 {
+        0%, 6.41% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-378px, -198px) scale(0.68);
+        }
+        7.61% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-378px, -198px) scale(0.76);
+        }
+        11.38% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-378px, -144px) scale(0.84);
+        }
+        16.89% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-90px, -144px) scale(0.9);
+        }
+        22.41% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-90px, 18px) scale(0.96);
+        }
+        27.93% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 18px) scale(1);
+        }
+        34%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-58 {
+        0%, 0.71% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-378px, -108px) scale(0.68);
+        }
+        1.91% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-378px, -108px) scale(0.76);
+        }
+        6.34% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-342px, -108px) scale(0.84);
+        }
+        12.6% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-342px, -54px) scale(0.9);
+        }
+        18.86% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-126px, -54px) scale(0.96);
+        }
+        25.12% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-126px, 0px) scale(1);
+        }
+        32%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-59 {
+        0%, 0.87% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-342px, -198px) scale(0.68);
+        }
+        2.07% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-342px, -198px) scale(0.76);
+        }
+        6.47% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-342px, -144px) scale(0.84);
+        }
+        12.7% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-90px, -144px) scale(0.9);
+        }
+        18.93% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-90px, 18px) scale(0.96);
+        }
+        25.15% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 18px) scale(1);
+        }
+        32%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-60 {
+        0%, 4.36% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(324px, -216px) scale(0.68);
+        }
+        5.56% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(324px, -216px) scale(0.76);
+        }
+        9.52% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(324px, -180px) scale(0.84);
+        }
+        15.24% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(180px, -180px) scale(0.9);
+        }
+        20.97% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(180px, -72px) scale(0.96);
+        }
+        26.7% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -72px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-61 {
+        0%, 4.52% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(288px, -54px) scale(0.68);
+        }
+        5.72% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(288px, -54px) scale(0.76);
+        }
+        9.65% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(216px, -54px) scale(0.84);
+        }
+        15.34% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(216px, -18px) scale(0.9);
+        }
+        21.04% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-54px, -18px) scale(0.96);
+        }
+        26.73% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-54px, 0px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-62 {
+        0%, 0.41% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-18px, -162px) scale(0.68);
+        }
+        1.61% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-18px, -162px) scale(0.76);
+        }
+        6.46% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-18px, -126px) scale(0.84);
+        }
+        13.17% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(0px, -126px) scale(0.9);
+        }
+        19.89% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(0px, 36px) scale(0.96);
+        }
+        26.61% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 36px) scale(1);
+        }
+        34%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-63 {
+        0%, 0.57% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-234px, 234px) scale(0.68);
+        }
+        1.77% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-234px, 234px) scale(0.76);
+        }
+        6.59% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-198px, 234px) scale(0.84);
+        }
+        13.27% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-198px, 126px) scale(0.9);
+        }
+        19.96% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-72px, 126px) scale(0.96);
+        }
+        26.65% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-72px, 0px) scale(1);
+        }
+        34%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-64 {
+        0%, 4.06% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(216px, 252px) scale(0.68);
+        }
+        5.26% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(216px, 252px) scale(0.76);
+        }
+        9.63% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(162px, 252px) scale(0.84);
+        }
+        15.82% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(162px, 72px) scale(0.9);
+        }
+        22.01% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-18px, 72px) scale(0.96);
+        }
+        28.19% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-18px, 0px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-65 {
+        0%, 5.98% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-252px, 72px) scale(0.68);
+        }
+        7.18% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-252px, 72px) scale(0.76);
+        }
+        11.2% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-198px, 72px) scale(0.84);
+        }
+        17.01% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-198px, 18px) scale(0.9);
+        }
+        22.81% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(18px, 18px) scale(0.96);
+        }
+        28.62% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(18px, 0px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-66 {
+        0%, 0.28% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-252px, -198px) scale(0.68);
+        }
+        1.48% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-252px, -198px) scale(0.76);
+        }
+        6.17% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-252px, -162px) scale(0.84);
+        }
+        12.71% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-144px, -162px) scale(0.9);
+        }
+        19.26% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-144px, -72px) scale(0.96);
+        }
+        25.8% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -72px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-67 {
+        0%, 2.18% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-252px, -108px) scale(0.68);
+        }
+        3.38% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-252px, -108px) scale(0.76);
+        }
+        7.37% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-198px, -108px) scale(0.84);
+        }
+        13.13% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-198px, -36px) scale(0.9);
+        }
+        18.9% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(18px, -36px) scale(0.96);
+        }
+        24.66% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(18px, 0px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-68 {
+        0%, 4.08% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-252px, -198px) scale(0.68);
+        }
+        5.28% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-252px, -198px) scale(0.76);
+        }
+        9.65% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-252px, -162px) scale(0.84);
+        }
+        15.83% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-144px, -162px) scale(0.9);
+        }
+        22.01% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-144px, -72px) scale(0.96);
+        }
+        28.2% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -72px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-69 {
+        0%, 4.24% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-216px, 54px) scale(0.68);
+        }
+        5.44% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-216px, 54px) scale(0.76);
+        }
+        9.78% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-162px, 54px) scale(0.84);
+        }
+        15.93% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-162px, 18px) scale(0.9);
+        }
+        22.08% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(36px, 18px) scale(0.96);
+        }
+        28.23% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(36px, 0px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-70 {
+        0%, 6.52% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-288px, 108px) scale(0.68);
+        }
+        7.72% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-288px, 108px) scale(0.76);
+        }
+        11.29% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-288px, 72px) scale(0.84);
+        }
+        16.58% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-162px, 72px) scale(0.9);
+        }
+        21.88% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-162px, 36px) scale(0.96);
+        }
+        27.17% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 36px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-71 {
+        0%, 1.2% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-360px, -72px) scale(0.68);
+        }
+        2.4% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-360px, -72px) scale(0.76);
+        }
+        6.56% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-288px, -72px) scale(0.84);
+        }
+        12.52% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-288px, -18px) scale(0.9);
+        }
+        18.48% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(18px, -18px) scale(0.96);
+        }
+        24.44% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(18px, 0px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-72 {
+        0%, 3.48% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-234px, -18px) scale(0.68);
+        }
+        4.68% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-234px, -18px) scale(0.76);
+        }
+        9.15% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-234px, 18px) scale(0.84);
+        }
+        15.46% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-144px, 18px) scale(0.9);
+        }
+        21.76% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-144px, 0px) scale(0.96);
+        }
+        28.07% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 0px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-73 {
+        0%, 5.76% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-306px, 36px) scale(0.68);
+        }
+        6.96% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-306px, 36px) scale(0.76);
+        }
+        10.66% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-234px, 36px) scale(0.84);
+        }
+        16.11% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-234px, 18px) scale(0.9);
+        }
+        21.56% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(54px, 18px) scale(0.96);
+        }
+        27.01% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(54px, 0px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-74 {
+        0%, 0.97% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(306px, 252px) scale(0.68);
+        }
+        2.17% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(306px, 252px) scale(0.76);
+        }
+        6.56% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(270px, 252px) scale(0.84);
+        }
+        12.76% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(270px, 144px) scale(0.9);
+        }
+        18.97% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(90px, 144px) scale(0.96);
+        }
+        25.17% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(90px, 0px) scale(1);
+        }
+        32%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-75 {
+        0%, 2.87% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(108px, 180px) scale(0.68);
+        }
+        4.07% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(108px, 180px) scale(0.76);
+        }
+        8.83% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(108px, 126px) scale(0.84);
+        }
+        15.46% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(36px, 126px) scale(0.9);
+        }
+        22.09% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(36px, -54px) scale(0.96);
+        }
+        28.71% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -54px) scale(1);
+        }
+        36%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-76 {
+        0%, 4.77% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(306px, 252px) scale(0.68);
+        }
+        5.97% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(306px, 252px) scale(0.76);
+        }
+        10.03% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(270px, 252px) scale(0.84);
+        }
+        15.88% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(270px, 144px) scale(0.9);
+        }
+        21.72% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(90px, 144px) scale(0.96);
+        }
+        27.57% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(90px, 0px) scale(1);
+        }
+        34%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-77 {
+        0%, 6.67% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(36px, 180px) scale(0.68);
+        }
+        7.87% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(36px, 180px) scale(0.76);
+        }
+        11.23% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(36px, 126px) scale(0.84);
+        }
+        16.3% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(18px, 126px) scale(0.9);
+        }
+        21.36% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(18px, -36px) scale(0.96);
+        }
+        26.43% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -36px) scale(1);
+        }
+        32%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-78 {
+        0%, 0.99% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-342px, -198px) scale(0.68);
+        }
+        2.19% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-342px, -198px) scale(0.76);
+        }
+        6.57% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-342px, -144px) scale(0.84);
+        }
+        12.77% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-90px, -144px) scale(0.9);
+        }
+        18.98% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-90px, 36px) scale(0.96);
+        }
+        25.18% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 36px) scale(1);
+        }
+        32%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-79 {
+        0%, 2.89% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-342px, 54px) scale(0.68);
+        }
+        4.09% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-342px, 54px) scale(0.76);
+        }
+        8.85% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-306px, 54px) scale(0.84);
+        }
+        15.47% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-306px, 36px) scale(0.9);
+        }
+        22.09% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-108px, 36px) scale(0.96);
+        }
+        28.72% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-108px, 0px) scale(1);
+        }
+        36%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-80 {
+        0%, 4.79% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-342px, -198px) scale(0.68);
+        }
+        5.99% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-342px, -198px) scale(0.76);
+        }
+        10.05% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-342px, -144px) scale(0.84);
+        }
+        15.89% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-90px, -144px) scale(0.9);
+        }
+        21.73% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-90px, 18px) scale(0.96);
+        }
+        27.57% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 18px) scale(1);
+        }
+        34%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-81 {
+        0%, 5.48% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(234px, 252px) scale(0.68);
+        }
+        6.68% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(234px, 252px) scale(0.76);
+        }
+        10.79% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(180px, 252px) scale(0.84);
+        }
+        16.7% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(180px, 72px) scale(0.9);
+        }
+        22.6% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-36px, 72px) scale(0.96);
+        }
+        28.51% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-36px, 0px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-82 {
+        0%, 1.37% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-216px, -54px) scale(0.68);
+        }
+        2.57% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-216px, -54px) scale(0.76);
+        }
+        7.6% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-216px, -36px) scale(0.84);
+        }
+        14.53% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-54px, -36px) scale(0.9);
+        }
+        21.46% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-54px, 36px) scale(0.96);
+        }
+        28.38% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 36px) scale(1);
+        }
+        36%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-83 {
+        0%, 1.53% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-378px, -198px) scale(0.68);
+        }
+        2.73% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-378px, -198px) scale(0.76);
+        }
+        7.73% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-342px, -198px) scale(0.84);
+        }
+        14.63% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-342px, -108px) scale(0.9);
+        }
+        21.52% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-126px, -108px) scale(0.96);
+        }
+        28.42% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-126px, 0px) scale(1);
+        }
+        36%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-84 {
+        0%, 5.02% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(360px, -216px) scale(0.68);
+        }
+        6.22% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(360px, -216px) scale(0.76);
+        }
+        9.7% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(288px, -216px) scale(0.84);
+        }
+        14.89% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(288px, -54px) scale(0.9);
+        }
+        20.09% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-54px, -54px) scale(0.96);
+        }
+        25.28% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-54px, 0px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-85 {
+        0%, 5.18% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(324px, -108px) scale(0.68);
+        }
+        6.38% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(324px, -108px) scale(0.76);
+        }
+        9.83% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(324px, -72px) scale(0.84);
+        }
+        14.99% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(180px, -72px) scale(0.9);
+        }
+        20.16% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(180px, -36px) scale(0.96);
+        }
+        25.32% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -36px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-86 {
+        0%, 7.08% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(324px, -216px) scale(0.68);
+        }
+        8.28% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(324px, -216px) scale(0.76);
+        }
+        12.11% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(252px, -216px) scale(0.84);
+        }
+        17.69% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(252px, -54px) scale(0.9);
+        }
+        23.27% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-18px, -54px) scale(0.96);
+        }
+        28.86% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-18px, 0px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-87 {
+        0%, 1.38% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(324px, 72px) scale(0.68);
+        }
+        2.58% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(324px, 72px) scale(0.76);
+        }
+        7.07% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(324px, 36px) scale(0.84);
+        }
+        13.4% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(180px, 36px) scale(0.9);
+        }
+        19.72% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(180px, 18px) scale(0.96);
+        }
+        26.04% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 18px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-88 {
+        0%, 3.28% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(324px, -216px) scale(0.68);
+        }
+        4.48% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(324px, -216px) scale(0.76);
+        }
+        8.27% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(252px, -216px) scale(0.84);
+        }
+        13.81% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(252px, -54px) scale(0.9);
+        }
+        19.36% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-18px, -54px) scale(0.96);
+        }
+        24.9% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-18px, 0px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-89 {
+        0%, 5.18% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(324px, 18px) scale(0.68);
+        }
+        6.38% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(324px, 18px) scale(0.76);
+        }
+        10.55% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(324px, -18px) scale(0.84);
+        }
+        16.51% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(180px, -18px) scale(0.9);
+        }
+        22.48% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(180px, 0px) scale(0.96);
+        }
+        28.44% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 0px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-90 {
+        0%, 5.34% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(288px, -216px) scale(0.68);
+        }
+        6.54% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(288px, -216px) scale(0.76);
+        }
+        10.68% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(216px, -216px) scale(0.84);
+        }
+        16.61% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(216px, -54px) scale(0.9);
+        }
+        22.54% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-36px, -54px) scale(0.96);
+        }
+        28.47% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-36px, 0px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-91 {
+        0%, 1.23% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-270px, 234px) scale(0.68);
+        }
+        2.43% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-270px, 234px) scale(0.76);
+        }
+        7.49% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-270px, 180px) scale(0.84);
+        }
+        14.44% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-72px, 180px) scale(0.9);
+        }
+        21.4% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-72px, -36px) scale(0.96);
+        }
+        28.35% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -36px) scale(1);
+        }
+        36%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-92 {
+        0%, 1.39% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-126px, -162px) scale(0.68);
+        }
+        2.59% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-126px, -162px) scale(0.76);
+        }
+        7.62% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-90px, -162px) scale(0.84);
+        }
+        14.54% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-90px, -90px) scale(0.9);
+        }
+        21.46% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-36px, -90px) scale(0.96);
+        }
+        28.39% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-36px, 0px) scale(1);
+        }
+        36%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-93 {
+        0%, 4.88% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-108px, 180px) scale(0.68);
+        }
+        6.08% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-108px, 180px) scale(0.76);
+        }
+        9.58% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-90px, 180px) scale(0.84);
+        }
+        14.81% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-90px, 54px) scale(0.9);
+        }
+        20.03% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(54px, 54px) scale(0.96);
+        }
+        25.25% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(54px, 0px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-94 {
+        0%, 5.04% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(378px, 252px) scale(0.68);
+        }
+        6.24% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(378px, 252px) scale(0.76);
+        }
+        9.71% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(378px, 216px) scale(0.84);
+        }
+        14.9% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(216px, 216px) scale(0.9);
+        }
+        20.1% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(216px, 90px) scale(0.96);
+        }
+        25.29% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, 90px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-95 {
+        0%, 0.93% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-360px, 108px) scale(0.68);
+        }
+        2.13% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-360px, 108px) scale(0.76);
+        }
+        6.52% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-324px, 108px) scale(0.84);
+        }
+        12.74% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-324px, 54px) scale(0.9);
+        }
+        18.95% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-108px, 54px) scale(0.96);
+        }
+        25.16% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(-108px, 0px) scale(1);
+        }
+        32%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-96 {
+        0%, 2.32% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-162px, -162px) scale(0.68);
+        }
+        3.52% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-162px, -162px) scale(0.76);
+        }
+        7.48% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-162px, -126px) scale(0.84);
+        }
+        13.22% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-90px, -126px) scale(0.9);
+        }
+        18.95% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-90px, -54px) scale(0.96);
+        }
+        24.69% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -54px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-97 {
+        0%, 4.22% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-270px, 234px) scale(0.68);
+        }
+        5.42% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-270px, 234px) scale(0.76);
+        }
+        9.76% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-216px, 234px) scale(0.84);
+        }
+        15.92% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-216px, 72px) scale(0.9);
+        }
+        22.07% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(18px, 72px) scale(0.96);
+        }
+        28.23% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(18px, 0px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-98 {
+        0%, 6.12% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-72px, -162px) scale(0.68);
+        }
+        7.32% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-72px, -162px) scale(0.76);
+        }
+        10.96% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-72px, -126px) scale(0.84);
+        }
+        16.33% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-36px, -126px) scale(0.9);
+        }
+        21.71% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-36px, -54px) scale(0.96);
+        }
+        27.09% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -54px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-99 {
+        0%, 0.42% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-270px, 234px) scale(0.68);
+        }
+        1.62% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-270px, 234px) scale(0.76);
+        }
+        5.92% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-216px, 234px) scale(0.84);
+        }
+        12.04% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-216px, 72px) scale(0.9);
+        }
+        18.16% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(18px, 72px) scale(0.96);
+        }
+        24.27% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(18px, 0px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-100 {
+        0%, 2.32% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(0px, -162px) scale(0.68);
+        }
+        3.52% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(0px, -162px) scale(0.76);
+        }
+        8.2% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(0px, -126px) scale(0.84);
+        }
+        14.74% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(0px, -126px) scale(0.9);
+        }
+        21.27% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(0px, -54px) scale(0.96);
+        }
+        27.81% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -54px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-101 {
+        0%, 3.54% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-288px, -198px) scale(0.68);
+        }
+        4.74% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-288px, -198px) scale(0.76);
+        }
+        8.48% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-288px, -162px) scale(0.84);
+        }
+        13.97% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-162px, -162px) scale(0.9);
+        }
+        19.47% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-162px, -72px) scale(0.96);
+        }
+        24.96% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -72px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-102 {
+        0%, 5.82% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-360px, -198px) scale(0.68);
+        }
+        7.02% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-360px, -198px) scale(0.76);
+        }
+        11.07% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-288px, -198px) scale(0.84);
+        }
+        16.91% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-288px, -54px) scale(0.9);
+        }
+        22.74% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(54px, -54px) scale(0.96);
+        }
+        28.58% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(54px, 0px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-103 {
+        0%, 0.5% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-234px, -198px) scale(0.68);
+        }
+        1.7% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-234px, -198px) scale(0.76);
+        }
+        6.35% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-234px, -162px) scale(0.84);
+        }
+        12.85% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-144px, -162px) scale(0.9);
+        }
+        19.35% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-144px, -72px) scale(0.96);
+        }
+        25.85% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -72px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-104 {
+        0%, 2.78% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-306px, -198px) scale(0.68);
+        }
+        3.98% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-306px, -198px) scale(0.76);
+        }
+        7.86% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-234px, -198px) scale(0.84);
+        }
+        13.5% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-234px, -54px) scale(0.9);
+        }
+        19.15% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(36px, -54px) scale(0.96);
+        }
+        24.79% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(36px, 0px) scale(1);
+        }
+        31%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-105 {
+        0%, 5.06% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-378px, -198px) scale(0.68);
+        }
+        6.26% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-378px, -198px) scale(0.76);
+        }
+        10.45% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-378px, -162px) scale(0.84);
+        }
+        16.44% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-216px, -162px) scale(0.9);
+        }
+        22.43% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(-216px, -72px) scale(0.96);
+        }
+        28.41% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(0px, -72px) scale(1);
+        }
+        35%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes tile-106 {
+        0%, 7.34% {
+          opacity: 0;
+          fill: #0f3b21;
+          transform: translate(-252px, -198px) scale(0.68);
+        }
+        8.54% {
+          opacity: .78;
+          fill: #2ea043;
+          transform: translate(-252px, -198px) scale(0.76);
+        }
+        11.96% {
+          opacity: .96;
+          fill: #39d353;
+          transform: translate(-198px, -198px) scale(0.84);
+        }
+        17.09% {
+          opacity: .82;
+          fill: #196c2e;
+          transform: translate(-198px, -54px) scale(0.9);
+        }
+        22.22% {
+          opacity: .96;
+          fill: #56d364;
+          transform: translate(18px, -54px) scale(0.96);
+        }
+        27.35% {
+          opacity: .9;
+          fill: #2ea043;
+          transform: translate(18px, 0px) scale(1);
+        }
+        33%, 78% {
+          opacity: 1;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+        92%, 100% {
+          opacity: 0;
+          fill: #b7ffbe;
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes glow-hold {
+        0%, 35% { opacity: 0; }
+        39%, 78% { opacity: .86; }
+        92%, 100% { opacity: 0; }
       }
 
       @keyframes subtitle-pop {
-        0%, 31% {
+        0%, 35% {
           opacity: 0;
           transform: translateY(7px) scale(.985);
         }
-        38%, 58% {
+        40%, 78% {
           opacity: 1;
           transform: translateY(0) scale(1);
         }
-        100% {
+        92%, 100% {
           opacity: 0;
           transform: translateY(0) scale(1);
         }
       }
 
       @media (prefers-reduced-motion: reduce) {
-        .bit, .subtitle { animation: none; opacity: 1; transform: none; }
+        .bit, .word-glow, .subtitle { animation: none; opacity: 1; transform: none; }
       }
     </style>
   </defs>
@@ -95,114 +4784,224 @@
   <rect width="1200" height="360" rx="28" fill="url(#backdrop)"/>
   <rect x="36" y="36" width="1128" height="288" rx="18" fill="#0d1117" stroke="#263241"/>
 
-  <g clip-path="url(#stage-clip)" filter="url(#soft-green)">
-    <use href="#cell" x="250" y="92" class="bit g0 lane-left" style="--delay: 0ms"/>
-    <use href="#cell" x="268" y="92" class="bit g1 lane-right" style="--delay: 15ms"/>
-    <use href="#cell" x="286" y="92" class="bit g2 lane-top" style="--delay: 30ms"/>
-    <use href="#cell" x="304" y="92" class="bit g3 lane-bottom" style="--delay: 45ms"/>
-    <use href="#cell" x="250" y="110" class="bit g1 lane-right" style="--delay: 24ms"/>
-    <use href="#cell" x="322" y="110" class="bit g0 lane-right-deep" style="--delay: 84ms"/>
-    <use href="#cell" x="250" y="128" class="bit g2 lane-top" style="--delay: 48ms"/>
-    <use href="#cell" x="322" y="128" class="bit g1 lane-top-soft" style="--delay: 108ms"/>
-    <use href="#cell" x="250" y="146" class="bit g3 lane-bottom" style="--delay: 72ms"/>
-    <use href="#cell" x="268" y="146" class="bit g4 lane-left-deep" style="--delay: 87ms"/>
-    <use href="#cell" x="286" y="146" class="bit g0 lane-right-deep" style="--delay: 102ms"/>
-    <use href="#cell" x="304" y="146" class="bit g1 lane-top-soft" style="--delay: 117ms"/>
-    <use href="#cell" x="250" y="164" class="bit g4 lane-left-deep" style="--delay: 96ms"/>
-    <use href="#cell" x="286" y="164" class="bit g1 lane-top-soft" style="--delay: 126ms"/>
-    <use href="#cell" x="250" y="182" class="bit g0 lane-right-deep" style="--delay: 120ms"/>
-    <use href="#cell" x="304" y="182" class="bit g3 lane-left" style="--delay: 165ms"/>
-    <use href="#cell" x="250" y="200" class="bit g1 lane-top-soft" style="--delay: 144ms"/>
-    <use href="#cell" x="322" y="200" class="bit g0 lane-top" style="--delay: 204ms"/>
-    <use href="#cell" x="372" y="92" class="bit g2 lane-top-soft" style="--delay: 77ms"/>
-    <use href="#cell" x="390" y="92" class="bit g3 lane-bottom-soft" style="--delay: 92ms"/>
-    <use href="#cell" x="408" y="92" class="bit g4 lane-left" style="--delay: 107ms"/>
-    <use href="#cell" x="354" y="110" class="bit g2 lane-top-soft" style="--delay: 86ms"/>
-    <use href="#cell" x="426" y="110" class="bit g1 lane-top" style="--delay: 146ms"/>
-    <use href="#cell" x="354" y="128" class="bit g3 lane-bottom-soft" style="--delay: 110ms"/>
-    <use href="#cell" x="426" y="128" class="bit g2 lane-bottom" style="--delay: 170ms"/>
-    <use href="#cell" x="354" y="146" class="bit g4 lane-left" style="--delay: 134ms"/>
-    <use href="#cell" x="372" y="146" class="bit g0 lane-right" style="--delay: 149ms"/>
-    <use href="#cell" x="390" y="146" class="bit g1 lane-top" style="--delay: 164ms"/>
-    <use href="#cell" x="408" y="146" class="bit g2 lane-bottom" style="--delay: 179ms"/>
-    <use href="#cell" x="426" y="146" class="bit g3 lane-left-deep" style="--delay: 194ms"/>
-    <use href="#cell" x="354" y="164" class="bit g0 lane-right" style="--delay: 158ms"/>
-    <use href="#cell" x="426" y="164" class="bit g4 lane-right-deep" style="--delay: 218ms"/>
-    <use href="#cell" x="354" y="182" class="bit g1 lane-top" style="--delay: 182ms"/>
-    <use href="#cell" x="426" y="182" class="bit g0 lane-top-soft" style="--delay: 242ms"/>
-    <use href="#cell" x="354" y="200" class="bit g2 lane-bottom" style="--delay: 206ms"/>
-    <use href="#cell" x="426" y="200" class="bit g1 lane-bottom-soft" style="--delay: 266ms"/>
-    <use href="#cell" x="458" y="92" class="bit g2 lane-top" style="--delay: 124ms"/>
-    <use href="#cell" x="476" y="92" class="bit g3 lane-bottom" style="--delay: 139ms"/>
-    <use href="#cell" x="494" y="92" class="bit g4 lane-left-deep" style="--delay: 154ms"/>
-    <use href="#cell" x="512" y="92" class="bit g0 lane-right-deep" style="--delay: 169ms"/>
-    <use href="#cell" x="530" y="92" class="bit g1 lane-top-soft" style="--delay: 184ms"/>
-    <use href="#cell" x="494" y="110" class="bit g0 lane-right-deep" style="--delay: 178ms"/>
-    <use href="#cell" x="494" y="128" class="bit g1 lane-top-soft" style="--delay: 202ms"/>
-    <use href="#cell" x="494" y="146" class="bit g2 lane-bottom-soft" style="--delay: 226ms"/>
-    <use href="#cell" x="494" y="164" class="bit g3 lane-left" style="--delay: 250ms"/>
-    <use href="#cell" x="494" y="182" class="bit g4 lane-right" style="--delay: 274ms"/>
-    <use href="#cell" x="494" y="200" class="bit g0 lane-top" style="--delay: 298ms"/>
-    <use href="#cell" x="580" y="92" class="bit g4 lane-left" style="--delay: 201ms"/>
-    <use href="#cell" x="598" y="92" class="bit g0 lane-right" style="--delay: 216ms"/>
-    <use href="#cell" x="616" y="92" class="bit g1 lane-top" style="--delay: 231ms"/>
-    <use href="#cell" x="562" y="110" class="bit g4 lane-left" style="--delay: 210ms"/>
-    <use href="#cell" x="634" y="110" class="bit g3 lane-left-deep" style="--delay: 270ms"/>
-    <use href="#cell" x="562" y="128" class="bit g0 lane-right" style="--delay: 234ms"/>
-    <use href="#cell" x="634" y="128" class="bit g4 lane-right-deep" style="--delay: 294ms"/>
-    <use href="#cell" x="562" y="146" class="bit g1 lane-top" style="--delay: 258ms"/>
-    <use href="#cell" x="580" y="146" class="bit g2 lane-bottom" style="--delay: 273ms"/>
-    <use href="#cell" x="598" y="146" class="bit g3 lane-left-deep" style="--delay: 288ms"/>
-    <use href="#cell" x="616" y="146" class="bit g4 lane-right-deep" style="--delay: 303ms"/>
-    <use href="#cell" x="634" y="146" class="bit g0 lane-top-soft" style="--delay: 318ms"/>
-    <use href="#cell" x="562" y="164" class="bit g2 lane-bottom" style="--delay: 282ms"/>
-    <use href="#cell" x="634" y="164" class="bit g1 lane-bottom-soft" style="--delay: 342ms"/>
-    <use href="#cell" x="562" y="182" class="bit g3 lane-left-deep" style="--delay: 306ms"/>
-    <use href="#cell" x="634" y="182" class="bit g2 lane-left" style="--delay: 366ms"/>
-    <use href="#cell" x="562" y="200" class="bit g4 lane-right-deep" style="--delay: 330ms"/>
-    <use href="#cell" x="634" y="200" class="bit g3 lane-right" style="--delay: 390ms"/>
-    <use href="#cell" x="684" y="92" class="bit g0 lane-right-deep" style="--delay: 263ms"/>
-    <use href="#cell" x="702" y="92" class="bit g1 lane-top-soft" style="--delay: 278ms"/>
-    <use href="#cell" x="720" y="92" class="bit g2 lane-bottom-soft" style="--delay: 293ms"/>
-    <use href="#cell" x="738" y="92" class="bit g3 lane-left" style="--delay: 308ms"/>
-    <use href="#cell" x="666" y="110" class="bit g0 lane-right-deep" style="--delay: 272ms"/>
-    <use href="#cell" x="666" y="128" class="bit g1 lane-top-soft" style="--delay: 296ms"/>
-    <use href="#cell" x="666" y="146" class="bit g2 lane-bottom-soft" style="--delay: 320ms"/>
-    <use href="#cell" x="666" y="164" class="bit g3 lane-left" style="--delay: 344ms"/>
-    <use href="#cell" x="666" y="182" class="bit g4 lane-right" style="--delay: 368ms"/>
-    <use href="#cell" x="684" y="200" class="bit g1 lane-bottom" style="--delay: 407ms"/>
-    <use href="#cell" x="702" y="200" class="bit g2 lane-left-deep" style="--delay: 422ms"/>
-    <use href="#cell" x="720" y="200" class="bit g3 lane-right-deep" style="--delay: 437ms"/>
-    <use href="#cell" x="738" y="200" class="bit g4 lane-top-soft" style="--delay: 452ms"/>
-    <use href="#cell" x="788" y="92" class="bit g1 lane-top" style="--delay: 325ms"/>
-    <use href="#cell" x="806" y="92" class="bit g2 lane-bottom" style="--delay: 340ms"/>
-    <use href="#cell" x="824" y="92" class="bit g3 lane-left-deep" style="--delay: 355ms"/>
-    <use href="#cell" x="770" y="110" class="bit g1 lane-top" style="--delay: 334ms"/>
-    <use href="#cell" x="842" y="110" class="bit g0 lane-top-soft" style="--delay: 394ms"/>
-    <use href="#cell" x="770" y="128" class="bit g2 lane-bottom" style="--delay: 358ms"/>
-    <use href="#cell" x="842" y="128" class="bit g1 lane-bottom-soft" style="--delay: 418ms"/>
-    <use href="#cell" x="770" y="146" class="bit g3 lane-left-deep" style="--delay: 382ms"/>
-    <use href="#cell" x="788" y="146" class="bit g4 lane-right-deep" style="--delay: 397ms"/>
-    <use href="#cell" x="806" y="146" class="bit g0 lane-top-soft" style="--delay: 412ms"/>
-    <use href="#cell" x="824" y="146" class="bit g1 lane-bottom-soft" style="--delay: 427ms"/>
-    <use href="#cell" x="842" y="146" class="bit g2 lane-left" style="--delay: 442ms"/>
-    <use href="#cell" x="770" y="164" class="bit g4 lane-right-deep" style="--delay: 406ms"/>
-    <use href="#cell" x="842" y="164" class="bit g3 lane-right" style="--delay: 466ms"/>
-    <use href="#cell" x="770" y="182" class="bit g0 lane-top-soft" style="--delay: 430ms"/>
-    <use href="#cell" x="842" y="182" class="bit g4 lane-top" style="--delay: 490ms"/>
-    <use href="#cell" x="770" y="200" class="bit g1 lane-bottom-soft" style="--delay: 454ms"/>
-    <use href="#cell" x="842" y="200" class="bit g0 lane-bottom" style="--delay: 514ms"/>
-    <use href="#cell" x="874" y="92" class="bit g1 lane-top-soft" style="--delay: 372ms"/>
-    <use href="#cell" x="892" y="92" class="bit g2 lane-bottom-soft" style="--delay: 387ms"/>
-    <use href="#cell" x="910" y="92" class="bit g3 lane-left" style="--delay: 402ms"/>
-    <use href="#cell" x="928" y="92" class="bit g4 lane-right" style="--delay: 417ms"/>
-    <use href="#cell" x="946" y="92" class="bit g0 lane-top" style="--delay: 432ms"/>
-    <use href="#cell" x="910" y="110" class="bit g4 lane-right" style="--delay: 426ms"/>
-    <use href="#cell" x="910" y="128" class="bit g0 lane-top" style="--delay: 450ms"/>
-    <use href="#cell" x="910" y="146" class="bit g1 lane-bottom" style="--delay: 474ms"/>
-    <use href="#cell" x="910" y="164" class="bit g2 lane-left-deep" style="--delay: 498ms"/>
-    <use href="#cell" x="910" y="182" class="bit g3 lane-right-deep" style="--delay: 522ms"/>
-    <use href="#cell" x="910" y="200" class="bit g4 lane-top-soft" style="--delay: 546ms"/>
+  <g clip-path="url(#stage-clip)">
+    <use href="#cell" x="250" y="92" class="bit tile-0"/>
+    <use href="#cell" x="268" y="92" class="bit tile-1"/>
+    <use href="#cell" x="286" y="92" class="bit tile-2"/>
+    <use href="#cell" x="304" y="92" class="bit tile-3"/>
+    <use href="#cell" x="250" y="110" class="bit tile-4"/>
+    <use href="#cell" x="322" y="110" class="bit tile-5"/>
+    <use href="#cell" x="250" y="128" class="bit tile-6"/>
+    <use href="#cell" x="322" y="128" class="bit tile-7"/>
+    <use href="#cell" x="250" y="146" class="bit tile-8"/>
+    <use href="#cell" x="268" y="146" class="bit tile-9"/>
+    <use href="#cell" x="286" y="146" class="bit tile-10"/>
+    <use href="#cell" x="304" y="146" class="bit tile-11"/>
+    <use href="#cell" x="250" y="164" class="bit tile-12"/>
+    <use href="#cell" x="286" y="164" class="bit tile-13"/>
+    <use href="#cell" x="250" y="182" class="bit tile-14"/>
+    <use href="#cell" x="304" y="182" class="bit tile-15"/>
+    <use href="#cell" x="250" y="200" class="bit tile-16"/>
+    <use href="#cell" x="322" y="200" class="bit tile-17"/>
+    <use href="#cell" x="372" y="92" class="bit tile-18"/>
+    <use href="#cell" x="390" y="92" class="bit tile-19"/>
+    <use href="#cell" x="408" y="92" class="bit tile-20"/>
+    <use href="#cell" x="354" y="110" class="bit tile-21"/>
+    <use href="#cell" x="426" y="110" class="bit tile-22"/>
+    <use href="#cell" x="354" y="128" class="bit tile-23"/>
+    <use href="#cell" x="426" y="128" class="bit tile-24"/>
+    <use href="#cell" x="354" y="146" class="bit tile-25"/>
+    <use href="#cell" x="372" y="146" class="bit tile-26"/>
+    <use href="#cell" x="390" y="146" class="bit tile-27"/>
+    <use href="#cell" x="408" y="146" class="bit tile-28"/>
+    <use href="#cell" x="426" y="146" class="bit tile-29"/>
+    <use href="#cell" x="354" y="164" class="bit tile-30"/>
+    <use href="#cell" x="426" y="164" class="bit tile-31"/>
+    <use href="#cell" x="354" y="182" class="bit tile-32"/>
+    <use href="#cell" x="426" y="182" class="bit tile-33"/>
+    <use href="#cell" x="354" y="200" class="bit tile-34"/>
+    <use href="#cell" x="426" y="200" class="bit tile-35"/>
+    <use href="#cell" x="458" y="92" class="bit tile-36"/>
+    <use href="#cell" x="476" y="92" class="bit tile-37"/>
+    <use href="#cell" x="494" y="92" class="bit tile-38"/>
+    <use href="#cell" x="512" y="92" class="bit tile-39"/>
+    <use href="#cell" x="530" y="92" class="bit tile-40"/>
+    <use href="#cell" x="494" y="110" class="bit tile-41"/>
+    <use href="#cell" x="494" y="128" class="bit tile-42"/>
+    <use href="#cell" x="494" y="146" class="bit tile-43"/>
+    <use href="#cell" x="494" y="164" class="bit tile-44"/>
+    <use href="#cell" x="494" y="182" class="bit tile-45"/>
+    <use href="#cell" x="494" y="200" class="bit tile-46"/>
+    <use href="#cell" x="580" y="92" class="bit tile-47"/>
+    <use href="#cell" x="598" y="92" class="bit tile-48"/>
+    <use href="#cell" x="616" y="92" class="bit tile-49"/>
+    <use href="#cell" x="562" y="110" class="bit tile-50"/>
+    <use href="#cell" x="634" y="110" class="bit tile-51"/>
+    <use href="#cell" x="562" y="128" class="bit tile-52"/>
+    <use href="#cell" x="634" y="128" class="bit tile-53"/>
+    <use href="#cell" x="562" y="146" class="bit tile-54"/>
+    <use href="#cell" x="580" y="146" class="bit tile-55"/>
+    <use href="#cell" x="598" y="146" class="bit tile-56"/>
+    <use href="#cell" x="616" y="146" class="bit tile-57"/>
+    <use href="#cell" x="634" y="146" class="bit tile-58"/>
+    <use href="#cell" x="562" y="164" class="bit tile-59"/>
+    <use href="#cell" x="634" y="164" class="bit tile-60"/>
+    <use href="#cell" x="562" y="182" class="bit tile-61"/>
+    <use href="#cell" x="634" y="182" class="bit tile-62"/>
+    <use href="#cell" x="562" y="200" class="bit tile-63"/>
+    <use href="#cell" x="634" y="200" class="bit tile-64"/>
+    <use href="#cell" x="684" y="92" class="bit tile-65"/>
+    <use href="#cell" x="702" y="92" class="bit tile-66"/>
+    <use href="#cell" x="720" y="92" class="bit tile-67"/>
+    <use href="#cell" x="738" y="92" class="bit tile-68"/>
+    <use href="#cell" x="666" y="110" class="bit tile-69"/>
+    <use href="#cell" x="666" y="128" class="bit tile-70"/>
+    <use href="#cell" x="666" y="146" class="bit tile-71"/>
+    <use href="#cell" x="666" y="164" class="bit tile-72"/>
+    <use href="#cell" x="666" y="182" class="bit tile-73"/>
+    <use href="#cell" x="684" y="200" class="bit tile-74"/>
+    <use href="#cell" x="702" y="200" class="bit tile-75"/>
+    <use href="#cell" x="720" y="200" class="bit tile-76"/>
+    <use href="#cell" x="738" y="200" class="bit tile-77"/>
+    <use href="#cell" x="788" y="92" class="bit tile-78"/>
+    <use href="#cell" x="806" y="92" class="bit tile-79"/>
+    <use href="#cell" x="824" y="92" class="bit tile-80"/>
+    <use href="#cell" x="770" y="110" class="bit tile-81"/>
+    <use href="#cell" x="842" y="110" class="bit tile-82"/>
+    <use href="#cell" x="770" y="128" class="bit tile-83"/>
+    <use href="#cell" x="842" y="128" class="bit tile-84"/>
+    <use href="#cell" x="770" y="146" class="bit tile-85"/>
+    <use href="#cell" x="788" y="146" class="bit tile-86"/>
+    <use href="#cell" x="806" y="146" class="bit tile-87"/>
+    <use href="#cell" x="824" y="146" class="bit tile-88"/>
+    <use href="#cell" x="842" y="146" class="bit tile-89"/>
+    <use href="#cell" x="770" y="164" class="bit tile-90"/>
+    <use href="#cell" x="842" y="164" class="bit tile-91"/>
+    <use href="#cell" x="770" y="182" class="bit tile-92"/>
+    <use href="#cell" x="842" y="182" class="bit tile-93"/>
+    <use href="#cell" x="770" y="200" class="bit tile-94"/>
+    <use href="#cell" x="842" y="200" class="bit tile-95"/>
+    <use href="#cell" x="874" y="92" class="bit tile-96"/>
+    <use href="#cell" x="892" y="92" class="bit tile-97"/>
+    <use href="#cell" x="910" y="92" class="bit tile-98"/>
+    <use href="#cell" x="928" y="92" class="bit tile-99"/>
+    <use href="#cell" x="946" y="92" class="bit tile-100"/>
+    <use href="#cell" x="910" y="110" class="bit tile-101"/>
+    <use href="#cell" x="910" y="128" class="bit tile-102"/>
+    <use href="#cell" x="910" y="146" class="bit tile-103"/>
+    <use href="#cell" x="910" y="164" class="bit tile-104"/>
+    <use href="#cell" x="910" y="182" class="bit tile-105"/>
+    <use href="#cell" x="910" y="200" class="bit tile-106"/>
+  </g>
+
+  <g class="word-glow" clip-path="url(#stage-clip)" filter="url(#arrival-glow)" fill="#b7ffbe">
+    <use href="#cell" x="250" y="92"/>
+    <use href="#cell" x="268" y="92"/>
+    <use href="#cell" x="286" y="92"/>
+    <use href="#cell" x="304" y="92"/>
+    <use href="#cell" x="250" y="110"/>
+    <use href="#cell" x="322" y="110"/>
+    <use href="#cell" x="250" y="128"/>
+    <use href="#cell" x="322" y="128"/>
+    <use href="#cell" x="250" y="146"/>
+    <use href="#cell" x="268" y="146"/>
+    <use href="#cell" x="286" y="146"/>
+    <use href="#cell" x="304" y="146"/>
+    <use href="#cell" x="250" y="164"/>
+    <use href="#cell" x="286" y="164"/>
+    <use href="#cell" x="250" y="182"/>
+    <use href="#cell" x="304" y="182"/>
+    <use href="#cell" x="250" y="200"/>
+    <use href="#cell" x="322" y="200"/>
+    <use href="#cell" x="372" y="92"/>
+    <use href="#cell" x="390" y="92"/>
+    <use href="#cell" x="408" y="92"/>
+    <use href="#cell" x="354" y="110"/>
+    <use href="#cell" x="426" y="110"/>
+    <use href="#cell" x="354" y="128"/>
+    <use href="#cell" x="426" y="128"/>
+    <use href="#cell" x="354" y="146"/>
+    <use href="#cell" x="372" y="146"/>
+    <use href="#cell" x="390" y="146"/>
+    <use href="#cell" x="408" y="146"/>
+    <use href="#cell" x="426" y="146"/>
+    <use href="#cell" x="354" y="164"/>
+    <use href="#cell" x="426" y="164"/>
+    <use href="#cell" x="354" y="182"/>
+    <use href="#cell" x="426" y="182"/>
+    <use href="#cell" x="354" y="200"/>
+    <use href="#cell" x="426" y="200"/>
+    <use href="#cell" x="458" y="92"/>
+    <use href="#cell" x="476" y="92"/>
+    <use href="#cell" x="494" y="92"/>
+    <use href="#cell" x="512" y="92"/>
+    <use href="#cell" x="530" y="92"/>
+    <use href="#cell" x="494" y="110"/>
+    <use href="#cell" x="494" y="128"/>
+    <use href="#cell" x="494" y="146"/>
+    <use href="#cell" x="494" y="164"/>
+    <use href="#cell" x="494" y="182"/>
+    <use href="#cell" x="494" y="200"/>
+    <use href="#cell" x="580" y="92"/>
+    <use href="#cell" x="598" y="92"/>
+    <use href="#cell" x="616" y="92"/>
+    <use href="#cell" x="562" y="110"/>
+    <use href="#cell" x="634" y="110"/>
+    <use href="#cell" x="562" y="128"/>
+    <use href="#cell" x="634" y="128"/>
+    <use href="#cell" x="562" y="146"/>
+    <use href="#cell" x="580" y="146"/>
+    <use href="#cell" x="598" y="146"/>
+    <use href="#cell" x="616" y="146"/>
+    <use href="#cell" x="634" y="146"/>
+    <use href="#cell" x="562" y="164"/>
+    <use href="#cell" x="634" y="164"/>
+    <use href="#cell" x="562" y="182"/>
+    <use href="#cell" x="634" y="182"/>
+    <use href="#cell" x="562" y="200"/>
+    <use href="#cell" x="634" y="200"/>
+    <use href="#cell" x="684" y="92"/>
+    <use href="#cell" x="702" y="92"/>
+    <use href="#cell" x="720" y="92"/>
+    <use href="#cell" x="738" y="92"/>
+    <use href="#cell" x="666" y="110"/>
+    <use href="#cell" x="666" y="128"/>
+    <use href="#cell" x="666" y="146"/>
+    <use href="#cell" x="666" y="164"/>
+    <use href="#cell" x="666" y="182"/>
+    <use href="#cell" x="684" y="200"/>
+    <use href="#cell" x="702" y="200"/>
+    <use href="#cell" x="720" y="200"/>
+    <use href="#cell" x="738" y="200"/>
+    <use href="#cell" x="788" y="92"/>
+    <use href="#cell" x="806" y="92"/>
+    <use href="#cell" x="824" y="92"/>
+    <use href="#cell" x="770" y="110"/>
+    <use href="#cell" x="842" y="110"/>
+    <use href="#cell" x="770" y="128"/>
+    <use href="#cell" x="842" y="128"/>
+    <use href="#cell" x="770" y="146"/>
+    <use href="#cell" x="788" y="146"/>
+    <use href="#cell" x="806" y="146"/>
+    <use href="#cell" x="824" y="146"/>
+    <use href="#cell" x="842" y="146"/>
+    <use href="#cell" x="770" y="164"/>
+    <use href="#cell" x="842" y="164"/>
+    <use href="#cell" x="770" y="182"/>
+    <use href="#cell" x="842" y="182"/>
+    <use href="#cell" x="770" y="200"/>
+    <use href="#cell" x="842" y="200"/>
+    <use href="#cell" x="874" y="92"/>
+    <use href="#cell" x="892" y="92"/>
+    <use href="#cell" x="910" y="92"/>
+    <use href="#cell" x="928" y="92"/>
+    <use href="#cell" x="946" y="92"/>
+    <use href="#cell" x="910" y="110"/>
+    <use href="#cell" x="910" y="128"/>
+    <use href="#cell" x="910" y="146"/>
+    <use href="#cell" x="910" y="164"/>
+    <use href="#cell" x="910" y="182"/>
+    <use href="#cell" x="910" y="200"/>
   </g>
 
   <text class="subtitle" x="600" y="268" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="22" font-weight="600" fill="#c9d1d9" letter-spacing="0">agentic tooling / memory systems / docs pipelines</text>
