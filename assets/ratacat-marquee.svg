@@ -1,87 +1,80 @@
 <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 360">
-  <title id="title">ratacat animated contribution-grid marquee</title>
-  <desc id="desc">A dark GitHub-style contribution grid with animated color bands and the text ratacat.</desc>
+  <title id="title">ratacat animated block marquee</title>
+  <desc id="desc">Contribution-grid blocks move into place to form the word ratacat, then drift apart.</desc>
   <defs>
     <linearGradient id="backdrop" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0" stop-color="#06090f"/>
-      <stop offset="0.48" stop-color="#0d1117"/>
-      <stop offset="1" stop-color="#101826"/>
+      <stop offset="0.52" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#121a25"/>
     </linearGradient>
 
     <pattern id="cells-base" width="18" height="18" patternUnits="userSpaceOnUse">
       <rect x="3" y="3" width="11" height="11" rx="2.5" fill="#182330"/>
     </pattern>
 
-    <pattern id="cells-green" width="18" height="18" patternUnits="userSpaceOnUse">
-      <rect x="3" y="3" width="11" height="11" rx="2.5" fill="#39d353"/>
-    </pattern>
-
-    <pattern id="cells-cyan" width="18" height="18" patternUnits="userSpaceOnUse">
-      <rect x="3" y="3" width="11" height="11" rx="2.5" fill="#2f81f7"/>
-    </pattern>
-
-    <pattern id="cells-amber" width="18" height="18" patternUnits="userSpaceOnUse">
-      <rect x="3" y="3" width="11" height="11" rx="2.5" fill="#f2cc60"/>
-    </pattern>
-
-    <pattern id="cells-violet" width="18" height="18" patternUnits="userSpaceOnUse">
-      <rect x="3" y="3" width="11" height="11" rx="2.5" fill="#d2a8ff"/>
-    </pattern>
-
-    <filter id="soft-glow" x="-20%" y="-40%" width="140%" height="180%">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <linearGradient id="word-fill" x1="0" x2="1" y1="0" y2="0">
-      <stop offset="0" stop-color="#f0f6fc"/>
-      <stop offset="0.38" stop-color="#9be9a8"/>
-      <stop offset="0.72" stop-color="#79c0ff"/>
-      <stop offset="1" stop-color="#f0f6fc"/>
-    </linearGradient>
-
     <clipPath id="grid-clip">
       <rect x="42" y="42" width="1116" height="276" rx="14"/>
     </clipPath>
 
-    <style>
-      .wave-a { animation: slide-a 8s linear infinite; opacity: 0.62; }
-      .wave-b { animation: slide-b 12s linear infinite; opacity: 0.50; }
-      .wave-c { animation: slide-c 10s linear infinite; opacity: 0.44; }
-      .pulse { animation: pulse 5.5s ease-in-out infinite; transform-origin: center; }
-      .scan { animation: scan 6.8s linear infinite; opacity: 0.55; }
-      .cursor { animation: blink 1.1s steps(2, end) infinite; }
+    <rect id="cell" width="13" height="13" rx="3"/>
 
-      @keyframes slide-a {
-        from { transform: translateX(-420px); }
-        to { transform: translateX(1320px); }
+    <style>
+      .bit {
+        animation: assemble 7.5s cubic-bezier(.2,.8,.2,1) infinite;
+        animation-delay: var(--delay, 0ms);
+        opacity: 0;
+        transform-box: fill-box;
+        transform-origin: center;
       }
-      @keyframes slide-b {
-        from { transform: translateX(1180px); }
-        to { transform: translateX(-520px); }
+
+      .g0 { fill: #39d353; }
+      .g1 { fill: #2f81f7; }
+      .g2 { fill: #f2cc60; }
+      .g3 { fill: #d2a8ff; }
+      .g4 { fill: #9be9a8; }
+
+      .from-n { --ix: 0px; --iy: -170px; --ox: 34px; --oy: 96px; }
+      .from-s { --ix: 0px; --iy: 170px; --ox: -34px; --oy: -96px; }
+      .from-e { --ix: 300px; --iy: 0px; --ox: -120px; --oy: -48px; }
+      .from-w { --ix: -300px; --iy: 0px; --ox: 120px; --oy: 48px; }
+      .from-ne { --ix: 230px; --iy: -150px; --ox: -96px; --oy: 80px; }
+      .from-nw { --ix: -230px; --iy: -150px; --ox: 96px; --oy: 80px; }
+      .from-se { --ix: 230px; --iy: 150px; --ox: -96px; --oy: -80px; }
+      .from-sw { --ix: -230px; --iy: 150px; --ox: 96px; --oy: -80px; }
+
+      .spark {
+        animation: flicker 5.4s ease-in-out infinite;
+        opacity: .16;
       }
-      @keyframes slide-c {
-        from { transform: translateX(-760px); }
-        to { transform: translateX(980px); }
+      .s1 { animation-delay: .8s; }
+      .s2 { animation-delay: 1.6s; }
+      .s3 { animation-delay: 2.4s; }
+
+      @keyframes assemble {
+        0% {
+          opacity: 0;
+          transform: translate(var(--ix), var(--iy)) scale(.55);
+        }
+        18% {
+          opacity: .9;
+        }
+        36%, 68% {
+          opacity: 1;
+          transform: translate(0, 0) scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(var(--ox), var(--oy)) scale(.65);
+        }
       }
-      @keyframes pulse {
-        0%, 100% { opacity: 0.34; }
-        50% { opacity: 0.78; }
-      }
-      @keyframes scan {
-        from { transform: translateY(-190px); }
-        to { transform: translateY(390px); }
-      }
-      @keyframes blink {
-        0%, 45% { opacity: 1; }
-        46%, 100% { opacity: 0; }
+
+      @keyframes flicker {
+        0%, 100% { opacity: .1; }
+        45%, 62% { opacity: .34; }
       }
 
       @media (prefers-reduced-motion: reduce) {
-        .wave-a, .wave-b, .wave-c, .pulse, .scan, .cursor { animation: none; }
+        .bit, .spark { animation: none; opacity: 1; transform: none; }
       }
     </style>
   </defs>
@@ -91,21 +84,244 @@
 
   <g clip-path="url(#grid-clip)">
     <rect x="42" y="42" width="1116" height="276" fill="url(#cells-base)"/>
-    <rect class="wave-a" x="-260" y="58" width="340" height="236" fill="url(#cells-green)"/>
-    <rect class="wave-b" x="-280" y="84" width="280" height="186" fill="url(#cells-cyan)"/>
-    <rect class="wave-c" x="-180" y="112" width="220" height="132" fill="url(#cells-amber)"/>
-    <rect class="pulse" x="732" y="72" width="252" height="198" fill="url(#cells-violet)"/>
+    <g fill="#2f81f7">
+      <use class="spark s1" href="#cell" x="156" y="96"/>
+      <use class="spark s2" href="#cell" x="1002" y="78"/>
+      <use class="spark s3" href="#cell" x="1020" y="240"/>
+    </g>
+    <g fill="#f2cc60">
+      <use class="spark s2" href="#cell" x="204" y="258"/>
+      <use class="spark s3" href="#cell" x="936" y="114"/>
+    </g>
+    <g fill="#d2a8ff">
+      <use class="spark s1" href="#cell" x="96" y="186"/>
+      <use class="spark s2" href="#cell" x="1080" y="168"/>
+    </g>
   </g>
 
-  <rect class="scan" x="54" y="0" width="1092" height="38" fill="#ffffff" opacity="0.14"/>
-
-  <g filter="url(#soft-glow)">
-    <text x="600" y="176" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="94" font-weight="800" fill="url(#word-fill)" letter-spacing="0">ratacat</text>
-    <text x="600" y="224" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="22" font-weight="600" fill="#c9d1d9" letter-spacing="0">agent tooling / memory systems / docs pipelines</text>
-    <rect class="cursor" x="917" y="141" width="15" height="82" rx="3" fill="#9be9a8"/>
+  <g fill="#8b949e" opacity=".28">
+    <use href="#cell" x="250" y="92"/>
+    <use href="#cell" x="268" y="92"/>
+    <use href="#cell" x="286" y="92"/>
+    <use href="#cell" x="304" y="92"/>
+    <use href="#cell" x="250" y="110"/>
+    <use href="#cell" x="322" y="110"/>
+    <use href="#cell" x="250" y="128"/>
+    <use href="#cell" x="322" y="128"/>
+    <use href="#cell" x="250" y="146"/>
+    <use href="#cell" x="268" y="146"/>
+    <use href="#cell" x="286" y="146"/>
+    <use href="#cell" x="304" y="146"/>
+    <use href="#cell" x="250" y="164"/>
+    <use href="#cell" x="286" y="164"/>
+    <use href="#cell" x="250" y="182"/>
+    <use href="#cell" x="304" y="182"/>
+    <use href="#cell" x="250" y="200"/>
+    <use href="#cell" x="322" y="200"/>
+    <use href="#cell" x="372" y="92"/>
+    <use href="#cell" x="390" y="92"/>
+    <use href="#cell" x="408" y="92"/>
+    <use href="#cell" x="354" y="110"/>
+    <use href="#cell" x="426" y="110"/>
+    <use href="#cell" x="354" y="128"/>
+    <use href="#cell" x="426" y="128"/>
+    <use href="#cell" x="354" y="146"/>
+    <use href="#cell" x="372" y="146"/>
+    <use href="#cell" x="390" y="146"/>
+    <use href="#cell" x="408" y="146"/>
+    <use href="#cell" x="426" y="146"/>
+    <use href="#cell" x="354" y="164"/>
+    <use href="#cell" x="426" y="164"/>
+    <use href="#cell" x="354" y="182"/>
+    <use href="#cell" x="426" y="182"/>
+    <use href="#cell" x="354" y="200"/>
+    <use href="#cell" x="426" y="200"/>
+    <use href="#cell" x="458" y="92"/>
+    <use href="#cell" x="476" y="92"/>
+    <use href="#cell" x="494" y="92"/>
+    <use href="#cell" x="512" y="92"/>
+    <use href="#cell" x="530" y="92"/>
+    <use href="#cell" x="494" y="110"/>
+    <use href="#cell" x="494" y="128"/>
+    <use href="#cell" x="494" y="146"/>
+    <use href="#cell" x="494" y="164"/>
+    <use href="#cell" x="494" y="182"/>
+    <use href="#cell" x="494" y="200"/>
+    <use href="#cell" x="580" y="92"/>
+    <use href="#cell" x="598" y="92"/>
+    <use href="#cell" x="616" y="92"/>
+    <use href="#cell" x="562" y="110"/>
+    <use href="#cell" x="634" y="110"/>
+    <use href="#cell" x="562" y="128"/>
+    <use href="#cell" x="634" y="128"/>
+    <use href="#cell" x="562" y="146"/>
+    <use href="#cell" x="580" y="146"/>
+    <use href="#cell" x="598" y="146"/>
+    <use href="#cell" x="616" y="146"/>
+    <use href="#cell" x="634" y="146"/>
+    <use href="#cell" x="562" y="164"/>
+    <use href="#cell" x="634" y="164"/>
+    <use href="#cell" x="562" y="182"/>
+    <use href="#cell" x="634" y="182"/>
+    <use href="#cell" x="562" y="200"/>
+    <use href="#cell" x="634" y="200"/>
+    <use href="#cell" x="684" y="92"/>
+    <use href="#cell" x="702" y="92"/>
+    <use href="#cell" x="720" y="92"/>
+    <use href="#cell" x="738" y="92"/>
+    <use href="#cell" x="666" y="110"/>
+    <use href="#cell" x="666" y="128"/>
+    <use href="#cell" x="666" y="146"/>
+    <use href="#cell" x="666" y="164"/>
+    <use href="#cell" x="666" y="182"/>
+    <use href="#cell" x="684" y="200"/>
+    <use href="#cell" x="702" y="200"/>
+    <use href="#cell" x="720" y="200"/>
+    <use href="#cell" x="738" y="200"/>
+    <use href="#cell" x="788" y="92"/>
+    <use href="#cell" x="806" y="92"/>
+    <use href="#cell" x="824" y="92"/>
+    <use href="#cell" x="770" y="110"/>
+    <use href="#cell" x="842" y="110"/>
+    <use href="#cell" x="770" y="128"/>
+    <use href="#cell" x="842" y="128"/>
+    <use href="#cell" x="770" y="146"/>
+    <use href="#cell" x="788" y="146"/>
+    <use href="#cell" x="806" y="146"/>
+    <use href="#cell" x="824" y="146"/>
+    <use href="#cell" x="842" y="146"/>
+    <use href="#cell" x="770" y="164"/>
+    <use href="#cell" x="842" y="164"/>
+    <use href="#cell" x="770" y="182"/>
+    <use href="#cell" x="842" y="182"/>
+    <use href="#cell" x="770" y="200"/>
+    <use href="#cell" x="842" y="200"/>
+    <use href="#cell" x="874" y="92"/>
+    <use href="#cell" x="892" y="92"/>
+    <use href="#cell" x="910" y="92"/>
+    <use href="#cell" x="928" y="92"/>
+    <use href="#cell" x="946" y="92"/>
+    <use href="#cell" x="910" y="110"/>
+    <use href="#cell" x="910" y="128"/>
+    <use href="#cell" x="910" y="146"/>
+    <use href="#cell" x="910" y="164"/>
+    <use href="#cell" x="910" y="182"/>
+    <use href="#cell" x="910" y="200"/>
   </g>
 
-  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" fill="#8b949e">
+  <g clip-path="url(#grid-clip)">
+    <use href="#cell" x="250" y="92" class="bit g0 from-n" style="--delay: 0ms"/>
+    <use href="#cell" x="268" y="92" class="bit g1 from-s" style="--delay: 21ms"/>
+    <use href="#cell" x="286" y="92" class="bit g2 from-e" style="--delay: 42ms"/>
+    <use href="#cell" x="304" y="92" class="bit g3 from-w" style="--delay: 63ms"/>
+    <use href="#cell" x="250" y="110" class="bit g1 from-s" style="--delay: 34ms"/>
+    <use href="#cell" x="322" y="110" class="bit g0 from-nw" style="--delay: 118ms"/>
+    <use href="#cell" x="250" y="128" class="bit g2 from-e" style="--delay: 68ms"/>
+    <use href="#cell" x="322" y="128" class="bit g1 from-se" style="--delay: 152ms"/>
+    <use href="#cell" x="250" y="146" class="bit g3 from-w" style="--delay: 102ms"/>
+    <use href="#cell" x="268" y="146" class="bit g4 from-ne" style="--delay: 123ms"/>
+    <use href="#cell" x="286" y="146" class="bit g0 from-nw" style="--delay: 144ms"/>
+    <use href="#cell" x="304" y="146" class="bit g1 from-se" style="--delay: 165ms"/>
+    <use href="#cell" x="250" y="164" class="bit g4 from-ne" style="--delay: 136ms"/>
+    <use href="#cell" x="286" y="164" class="bit g1 from-se" style="--delay: 178ms"/>
+    <use href="#cell" x="250" y="182" class="bit g0 from-nw" style="--delay: 170ms"/>
+    <use href="#cell" x="304" y="182" class="bit g3 from-n" style="--delay: 233ms"/>
+    <use href="#cell" x="250" y="200" class="bit g1 from-se" style="--delay: 204ms"/>
+    <use href="#cell" x="322" y="200" class="bit g0 from-e" style="--delay: 288ms"/>
+    <use href="#cell" x="372" y="92" class="bit g2 from-ne" style="--delay: 91ms"/>
+    <use href="#cell" x="390" y="92" class="bit g3 from-nw" style="--delay: 112ms"/>
+    <use href="#cell" x="408" y="92" class="bit g4 from-se" style="--delay: 133ms"/>
+    <use href="#cell" x="354" y="110" class="bit g2 from-ne" style="--delay: 104ms"/>
+    <use href="#cell" x="426" y="110" class="bit g1 from-n" style="--delay: 188ms"/>
+    <use href="#cell" x="354" y="128" class="bit g3 from-nw" style="--delay: 138ms"/>
+    <use href="#cell" x="426" y="128" class="bit g2 from-s" style="--delay: 222ms"/>
+    <use href="#cell" x="354" y="146" class="bit g4 from-se" style="--delay: 172ms"/>
+    <use href="#cell" x="372" y="146" class="bit g0 from-sw" style="--delay: 193ms"/>
+    <use href="#cell" x="390" y="146" class="bit g1 from-n" style="--delay: 214ms"/>
+    <use href="#cell" x="408" y="146" class="bit g2 from-s" style="--delay: 235ms"/>
+    <use href="#cell" x="426" y="146" class="bit g3 from-e" style="--delay: 256ms"/>
+    <use href="#cell" x="354" y="164" class="bit g0 from-sw" style="--delay: 206ms"/>
+    <use href="#cell" x="426" y="164" class="bit g4 from-w" style="--delay: 290ms"/>
+    <use href="#cell" x="354" y="182" class="bit g1 from-n" style="--delay: 240ms"/>
+    <use href="#cell" x="426" y="182" class="bit g0 from-ne" style="--delay: 324ms"/>
+    <use href="#cell" x="354" y="200" class="bit g2 from-s" style="--delay: 274ms"/>
+    <use href="#cell" x="426" y="200" class="bit g1 from-nw" style="--delay: 358ms"/>
+    <use href="#cell" x="458" y="92" class="bit g2 from-se" style="--delay: 140ms"/>
+    <use href="#cell" x="476" y="92" class="bit g3 from-sw" style="--delay: 161ms"/>
+    <use href="#cell" x="494" y="92" class="bit g4 from-n" style="--delay: 182ms"/>
+    <use href="#cell" x="512" y="92" class="bit g0 from-s" style="--delay: 203ms"/>
+    <use href="#cell" x="530" y="92" class="bit g1 from-e" style="--delay: 224ms"/>
+    <use href="#cell" x="494" y="110" class="bit g0 from-s" style="--delay: 216ms"/>
+    <use href="#cell" x="494" y="128" class="bit g1 from-e" style="--delay: 250ms"/>
+    <use href="#cell" x="494" y="146" class="bit g2 from-w" style="--delay: 284ms"/>
+    <use href="#cell" x="494" y="164" class="bit g3 from-ne" style="--delay: 318ms"/>
+    <use href="#cell" x="494" y="182" class="bit g4 from-nw" style="--delay: 352ms"/>
+    <use href="#cell" x="494" y="200" class="bit g0 from-se" style="--delay: 386ms"/>
+    <use href="#cell" x="580" y="92" class="bit g4 from-e" style="--delay: 231ms"/>
+    <use href="#cell" x="598" y="92" class="bit g0 from-w" style="--delay: 252ms"/>
+    <use href="#cell" x="616" y="92" class="bit g1 from-ne" style="--delay: 273ms"/>
+    <use href="#cell" x="562" y="110" class="bit g4 from-e" style="--delay: 244ms"/>
+    <use href="#cell" x="634" y="110" class="bit g3 from-se" style="--delay: 328ms"/>
+    <use href="#cell" x="562" y="128" class="bit g0 from-w" style="--delay: 278ms"/>
+    <use href="#cell" x="634" y="128" class="bit g4 from-sw" style="--delay: 362ms"/>
+    <use href="#cell" x="562" y="146" class="bit g1 from-ne" style="--delay: 312ms"/>
+    <use href="#cell" x="580" y="146" class="bit g2 from-nw" style="--delay: 333ms"/>
+    <use href="#cell" x="598" y="146" class="bit g3 from-se" style="--delay: 354ms"/>
+    <use href="#cell" x="616" y="146" class="bit g4 from-sw" style="--delay: 375ms"/>
+    <use href="#cell" x="634" y="146" class="bit g0 from-n" style="--delay: 396ms"/>
+    <use href="#cell" x="562" y="164" class="bit g2 from-nw" style="--delay: 346ms"/>
+    <use href="#cell" x="634" y="164" class="bit g1 from-s" style="--delay: 430ms"/>
+    <use href="#cell" x="562" y="182" class="bit g3 from-se" style="--delay: 380ms"/>
+    <use href="#cell" x="634" y="182" class="bit g2 from-e" style="--delay: 464ms"/>
+    <use href="#cell" x="562" y="200" class="bit g4 from-sw" style="--delay: 414ms"/>
+    <use href="#cell" x="634" y="200" class="bit g3 from-w" style="--delay: 498ms"/>
+    <use href="#cell" x="684" y="92" class="bit g0 from-nw" style="--delay: 301ms"/>
+    <use href="#cell" x="702" y="92" class="bit g1 from-se" style="--delay: 322ms"/>
+    <use href="#cell" x="720" y="92" class="bit g2 from-sw" style="--delay: 343ms"/>
+    <use href="#cell" x="738" y="92" class="bit g3 from-n" style="--delay: 364ms"/>
+    <use href="#cell" x="666" y="110" class="bit g0 from-nw" style="--delay: 314ms"/>
+    <use href="#cell" x="666" y="128" class="bit g1 from-se" style="--delay: 348ms"/>
+    <use href="#cell" x="666" y="146" class="bit g2 from-sw" style="--delay: 382ms"/>
+    <use href="#cell" x="666" y="164" class="bit g3 from-n" style="--delay: 416ms"/>
+    <use href="#cell" x="666" y="182" class="bit g4 from-s" style="--delay: 450ms"/>
+    <use href="#cell" x="684" y="200" class="bit g1 from-w" style="--delay: 505ms"/>
+    <use href="#cell" x="702" y="200" class="bit g2 from-ne" style="--delay: 526ms"/>
+    <use href="#cell" x="720" y="200" class="bit g3 from-nw" style="--delay: 547ms"/>
+    <use href="#cell" x="738" y="200" class="bit g4 from-se" style="--delay: 568ms"/>
+    <use href="#cell" x="788" y="92" class="bit g1 from-n" style="--delay: 371ms"/>
+    <use href="#cell" x="806" y="92" class="bit g2 from-s" style="--delay: 392ms"/>
+    <use href="#cell" x="824" y="92" class="bit g3 from-e" style="--delay: 413ms"/>
+    <use href="#cell" x="770" y="110" class="bit g1 from-n" style="--delay: 384ms"/>
+    <use href="#cell" x="842" y="110" class="bit g0 from-ne" style="--delay: 468ms"/>
+    <use href="#cell" x="770" y="128" class="bit g2 from-s" style="--delay: 418ms"/>
+    <use href="#cell" x="842" y="128" class="bit g1 from-nw" style="--delay: 502ms"/>
+    <use href="#cell" x="770" y="146" class="bit g3 from-e" style="--delay: 452ms"/>
+    <use href="#cell" x="788" y="146" class="bit g4 from-w" style="--delay: 473ms"/>
+    <use href="#cell" x="806" y="146" class="bit g0 from-ne" style="--delay: 494ms"/>
+    <use href="#cell" x="824" y="146" class="bit g1 from-nw" style="--delay: 515ms"/>
+    <use href="#cell" x="842" y="146" class="bit g2 from-se" style="--delay: 536ms"/>
+    <use href="#cell" x="770" y="164" class="bit g4 from-w" style="--delay: 486ms"/>
+    <use href="#cell" x="842" y="164" class="bit g3 from-sw" style="--delay: 570ms"/>
+    <use href="#cell" x="770" y="182" class="bit g0 from-ne" style="--delay: 520ms"/>
+    <use href="#cell" x="842" y="182" class="bit g4 from-n" style="--delay: 604ms"/>
+    <use href="#cell" x="770" y="200" class="bit g1 from-nw" style="--delay: 554ms"/>
+    <use href="#cell" x="842" y="200" class="bit g0 from-s" style="--delay: 638ms"/>
+    <use href="#cell" x="874" y="92" class="bit g1 from-e" style="--delay: 420ms"/>
+    <use href="#cell" x="892" y="92" class="bit g2 from-w" style="--delay: 441ms"/>
+    <use href="#cell" x="910" y="92" class="bit g3 from-ne" style="--delay: 462ms"/>
+    <use href="#cell" x="928" y="92" class="bit g4 from-nw" style="--delay: 483ms"/>
+    <use href="#cell" x="946" y="92" class="bit g0 from-se" style="--delay: 504ms"/>
+    <use href="#cell" x="910" y="110" class="bit g4 from-nw" style="--delay: 496ms"/>
+    <use href="#cell" x="910" y="128" class="bit g0 from-se" style="--delay: 530ms"/>
+    <use href="#cell" x="910" y="146" class="bit g1 from-sw" style="--delay: 564ms"/>
+    <use href="#cell" x="910" y="164" class="bit g2 from-n" style="--delay: 598ms"/>
+    <use href="#cell" x="910" y="182" class="bit g3 from-s" style="--delay: 632ms"/>
+    <use href="#cell" x="910" y="200" class="bit g4 from-e" style="--delay: 666ms"/>
+  </g>
+
+  <text x="600" y="268" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="22" font-weight="600" fill="#c9d1d9" letter-spacing="0">agent tooling / memory systems / docs pipelines</text>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" fill="#8b949e" letter-spacing="0">
     <text x="62" y="310">css-only svg</text>
     <text x="1010" y="310">github-safe</text>
   </g>

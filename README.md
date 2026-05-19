@@ -23,6 +23,18 @@ I build tools for AI-assisted development: better context, better coordination, 
 | [openclaw-hindsight](https://github.com/ratacat/openclaw-hindsight) | Connects OpenClaw memory to Hindsight's fact-centric knowledge graph. |
 | [annas-archive-ebooks](https://github.com/ratacat/annas-archive-ebooks) | Adds ebook search and download workflows for agent-assisted research. |
 
+## Villagecraft
+
+<p align="center">
+  <a href="https://github.com/ratacat/villagecraft">
+    <img src="https://raw.githubusercontent.com/ratacat/villagecraft/master/public/villagecraft350.png" alt="Villagecraft logo" width="260">
+  </a>
+</p>
+
+[Villagecraft](https://github.com/ratacat/villagecraft) was a community calendar and organizing platform for neighborhood-scale workshops, skillshares, and hands-on projects.
+
+The work centered on ground-up organizing: helping people coordinate groups, share resources, find spaces, spread the word, and make local co-learning visible. The old FAQ framed it as tools for "hands-on learning activities at the neighborhood level" and a network for co-creation, creative projects, wellness workshops, and community-led making.
+
 ## Marquee Studies
 
 Five README-safe SVG studies from [github-marquee](https://github.com/ratacat/github-marquee).
@@ -72,15 +84,7 @@ Five README-safe SVG studies from [github-marquee](https://github.com/ratacat/gi
 | --- | --- |
 | Ranvier and MUD ecosystem | [mudcolors](https://github.com/ratacat/mudcolors), [mudcolors-tester](https://github.com/ratacat/mudcolors-tester), [ranvier-community](https://github.com/ratacat/ranvier-community), [ranvier-awesome](https://github.com/ratacat/ranvier-awesome), [ranvier-multi-arg-parser](https://github.com/ratacat/ranvier-multi-arg-parser), [area-respawn](https://github.com/ratacat/area-respawn) |
 | Enceladus and game work | [enceladusgame](https://github.com/ratacat/enceladusgame), [enceladus-client](https://github.com/ratacat/enceladus-client), [evermore-color-staging](https://github.com/ratacat/evermore-color-staging) |
-| Older web games and exercises | [villagecraft](https://github.com/ratacat/villagecraft), [catchphrase](https://github.com/ratacat/catchphrase), [ToEat.ly](https://github.com/ratacat/ToEat.ly), [bitly_clone](https://github.com/ratacat/bitly_clone), [burger_app](https://github.com/ratacat/burger_app), [json_blob_challenge](https://github.com/ratacat/json_blob_challenge) |
-
-### Web, Learning, And Archive Work
-
-| Thread | Repos |
-| --- | --- |
-| Early apps | [meetupviewer](https://github.com/ratacat/meetupviewer), [functional_javascript](https://github.com/ratacat/functional_javascript), [d3-circles](https://github.com/ratacat/d3-circles), [library_app](https://github.com/ratacat/library_app), [simple-login](https://github.com/ratacat/simple-login), [template-experiments](https://github.com/ratacat/template-experiments), [morning-problems](https://github.com/ratacat/morning-problems) |
-| Ruby/PHP era | [routes_app](https://github.com/ratacat/routes_app), [username_generator](https://github.com/ratacat/username_generator), [sql-experiment](https://github.com/ratacat/sql-experiment), [imbr](https://github.com/ratacat/imbr) |
-| UI adjustments | [exstreemit](https://github.com/ratacat/exstreemit) |
+| Older web games and exercises | [catchphrase](https://github.com/ratacat/catchphrase), [ToEat.ly](https://github.com/ratacat/ToEat.ly), [bitly_clone](https://github.com/ratacat/bitly_clone), [burger_app](https://github.com/ratacat/burger_app), [json_blob_challenge](https://github.com/ratacat/json_blob_challenge) |
 
 ### Public Forks And Adaptations
 
@@ -89,8 +93,6 @@ Five README-safe SVG studies from [github-marquee](https://github.com/ratacat/gi
 | Agent and AI systems | [ypi](https://github.com/ratacat/ypi), [codex-orchestrator](https://github.com/ratacat/codex-orchestrator), [stealth-browser-mcp](https://github.com/ratacat/stealth-browser-mcp), [LlamaIndexTS](https://github.com/ratacat/LlamaIndexTS), [tokens](https://github.com/ratacat/tokens), [exa-cli](https://github.com/ratacat/exa-cli) |
 | Prediction markets and crypto | [pmxt](https://github.com/ratacat/pmxt), [testnets](https://github.com/ratacat/testnets) |
 | MUD/Ranvier ecosystem | [ranviermud](https://github.com/ratacat/ranviermud), [pinwheel](https://github.com/ratacat/pinwheel), [core](https://github.com/ratacat/core), [awesome-ranvier](https://github.com/ratacat/awesome-ranvier), [axolemma](https://github.com/ratacat/axolemma), [neuro](https://github.com/ratacat/neuro), [dome-client.js](https://github.com/ratacat/dome-client.js), [lobus](https://github.com/ratacat/lobus) |
-| Learning traces | [command_line_mystery](https://github.com/ratacat/command_line_mystery), [dom_exercises](https://github.com/ratacat/dom_exercises), [tic-tac-toe](https://github.com/ratacat/tic-tac-toe), [prototypes](https://github.com/ratacat/prototypes), [iterators_hmwk](https://github.com/ratacat/iterators_hmwk), [OOP-TicTacToe](https://github.com/ratacat/OOP-TicTacToe), [wdi-fundamentals-rps](https://github.com/ratacat/wdi-fundamentals-rps), [postit](https://github.com/ratacat/postit), [Catchphrase.ly](https://github.com/ratacat/Catchphrase.ly), [sample_atlas](https://github.com/ratacat/sample_atlas) |
-| JavaScript references | [You-Dont-Know-JS](https://github.com/ratacat/You-Dont-Know-JS), [hyper](https://github.com/ratacat/hyper), [ansi_up](https://github.com/ratacat/ansi_up), [documentation](https://github.com/ratacat/documentation), [docs](https://github.com/ratacat/docs), [bundle-example-classes](https://github.com/ratacat/bundle-example-classes), [bundle-example-commands](https://github.com/ratacat/bundle-example-commands), [bundle-example-effects](https://github.com/ratacat/bundle-example-effects), [bundle-example-player-events](https://github.com/ratacat/bundle-example-player-events), [bundle-example-quests](https://github.com/ratacat/bundle-example-quests), [fantasy-time-crunch](https://github.com/ratacat/fantasy-time-crunch) |
 
 ## Private And Closed Work
 
@@ -104,14 +106,3 @@ Named without links:
 | Browser, media, and research tools | `clearfeed`, `clearfeed-extension`, `replyhunter`, `media-scanner`, `text-crawler`, `twitter` |
 | Crypto and finance experiments | `sol-fleet`, `crypto-hourly`, `xcapit-dist`, `cryptonation`, `uniswap-trader` |
 | Older worldbuilding and web projects | `enceladus`, `enceladus-site`, `evermore-web`, `evermore-backup`, `mudlense`, `frontman`, `frontm`, `puntman`, `crowd`, `crowd-symbols`, `ketascrape` |
-
-## Current Bias
-
-- Tools that compress messy web and repo context into useful agent inputs.
-- Systems that let concurrent agents leave durable decisions behind.
-- Interfaces with a little terminal, ASCII, or display-board energy.
-- Research workflows that preserve sources and make uncertainty explicit.
-
-## Profile Display
-
-The header above is a self-contained SVG. It uses CSS animation inside the asset, no JavaScript, no external badge service, and no runtime dependency outside this repo.
