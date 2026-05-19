@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 360">
+  <title id="title">ratacat animated contribution-grid marquee</title>
+  <desc id="desc">A dark GitHub-style contribution grid with animated color bands and the text ratacat.</desc>
+  <defs>
+    <linearGradient id="backdrop" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#06090f"/>
+      <stop offset="0.48" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#101826"/>
+    </linearGradient>
+
+    <pattern id="cells-base" width="18" height="18" patternUnits="userSpaceOnUse">
+      <rect x="3" y="3" width="11" height="11" rx="2.5" fill="#182330"/>
+    </pattern>
+
+    <pattern id="cells-green" width="18" height="18" patternUnits="userSpaceOnUse">
+      <rect x="3" y="3" width="11" height="11" rx="2.5" fill="#39d353"/>
+    </pattern>
+
+    <pattern id="cells-cyan" width="18" height="18" patternUnits="userSpaceOnUse">
+      <rect x="3" y="3" width="11" height="11" rx="2.5" fill="#2f81f7"/>
+    </pattern>
+
+    <pattern id="cells-amber" width="18" height="18" patternUnits="userSpaceOnUse">
+      <rect x="3" y="3" width="11" height="11" rx="2.5" fill="#f2cc60"/>
+    </pattern>
+
+    <pattern id="cells-violet" width="18" height="18" patternUnits="userSpaceOnUse">
+      <rect x="3" y="3" width="11" height="11" rx="2.5" fill="#d2a8ff"/>
+    </pattern>
+
+    <filter id="soft-glow" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <linearGradient id="word-fill" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#f0f6fc"/>
+      <stop offset="0.38" stop-color="#9be9a8"/>
+      <stop offset="0.72" stop-color="#79c0ff"/>
+      <stop offset="1" stop-color="#f0f6fc"/>
+    </linearGradient>
+
+    <clipPath id="grid-clip">
+      <rect x="42" y="42" width="1116" height="276" rx="14"/>
+    </clipPath>
+
+    <style>
+      .wave-a { animation: slide-a 8s linear infinite; opacity: 0.62; }
+      .wave-b { animation: slide-b 12s linear infinite; opacity: 0.50; }
+      .wave-c { animation: slide-c 10s linear infinite; opacity: 0.44; }
+      .pulse { animation: pulse 5.5s ease-in-out infinite; transform-origin: center; }
+      .scan { animation: scan 6.8s linear infinite; opacity: 0.55; }
+      .cursor { animation: blink 1.1s steps(2, end) infinite; }
+
+      @keyframes slide-a {
+        from { transform: translateX(-420px); }
+        to { transform: translateX(1320px); }
+      }
+      @keyframes slide-b {
+        from { transform: translateX(1180px); }
+        to { transform: translateX(-520px); }
+      }
+      @keyframes slide-c {
+        from { transform: translateX(-760px); }
+        to { transform: translateX(980px); }
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 0.34; }
+        50% { opacity: 0.78; }
+      }
+      @keyframes scan {
+        from { transform: translateY(-190px); }
+        to { transform: translateY(390px); }
+      }
+      @keyframes blink {
+        0%, 45% { opacity: 1; }
+        46%, 100% { opacity: 0; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .wave-a, .wave-b, .wave-c, .pulse, .scan, .cursor { animation: none; }
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="360" rx="28" fill="url(#backdrop)"/>
+  <rect x="36" y="36" width="1128" height="288" rx="18" fill="#0d1117" stroke="#263241"/>
+
+  <g clip-path="url(#grid-clip)">
+    <rect x="42" y="42" width="1116" height="276" fill="url(#cells-base)"/>
+    <rect class="wave-a" x="-260" y="58" width="340" height="236" fill="url(#cells-green)"/>
+    <rect class="wave-b" x="-280" y="84" width="280" height="186" fill="url(#cells-cyan)"/>
+    <rect class="wave-c" x="-180" y="112" width="220" height="132" fill="url(#cells-amber)"/>
+    <rect class="pulse" x="732" y="72" width="252" height="198" fill="url(#cells-violet)"/>
+  </g>
+
+  <rect class="scan" x="54" y="0" width="1092" height="38" fill="#ffffff" opacity="0.14"/>
+
+  <g filter="url(#soft-glow)">
+    <text x="600" y="176" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="94" font-weight="800" fill="url(#word-fill)" letter-spacing="0">ratacat</text>
+    <text x="600" y="224" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="22" font-weight="600" fill="#c9d1d9" letter-spacing="0">agent tooling / memory systems / docs pipelines</text>
+    <rect class="cursor" x="917" y="141" width="15" height="82" rx="3" fill="#9be9a8"/>
+  </g>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" fill="#8b949e">
+    <text x="62" y="310">css-only svg</text>
+    <text x="1010" y="310">github-safe</text>
+  </g>
+</svg>
