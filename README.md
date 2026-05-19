@@ -16,12 +16,16 @@ I build tools for AI-assisted development: better context, better coordination, 
 
 | Project | What it does |
 | --- | --- |
-| [slurp-ai](https://github.com/ratacat/slurp-ai) | Scrapes documentation sites into clean, AI-ready markdown. |
-| [claude-skills](https://github.com/ratacat/claude-skills) | Collects reusable agent skills and tooling for building them from source material. |
 | [pro-cli](https://github.com/ratacat/pro-cli) | Gives agents a JSON-first CLI for ChatGPT Pro and Deep Research through a logged-in browser session. |
+| [raindrop-cli](https://github.com/ratacat/raindrop-cli) | Exposes Raindrop bookmarks through a clean agent-friendly CLI. |
+| [discive](https://github.com/ratacat/discive) | Experiments with disciplined discovery and command-line research flows. |
+| [extra-eyes](https://github.com/ratacat/extra-eyes) | Runs parallel review passes so agents can catch misses in each other's work. |
 | [liquid-mail](https://github.com/ratacat/liquid-mail) | Turns agent coordination logs into searchable project memory. |
-| [openclaw-hindsight](https://github.com/ratacat/openclaw-hindsight) | Connects OpenClaw memory to Hindsight's fact-centric knowledge graph. |
+| [knb](https://github.com/ratacat/knb) | Builds knowledge-base workflows for research, synthesis, and durable context. |
+| [salt-ai](https://github.com/ratacat/salt-ai) | Explores small agent tools and experiments around AI-assisted work. |
 | [annas-archive-ebooks](https://github.com/ratacat/annas-archive-ebooks) | Adds ebook search and download workflows for agent-assisted research. |
+| [claude-skills](https://github.com/ratacat/claude-skills) | Collects reusable agent skills and tooling for building them from source material. |
+| [ascii-love](https://github.com/ratacat/ascii-love) | Plays with terminal-native visual interfaces and ASCII display work. |
 
 ## Villagecraft
 
