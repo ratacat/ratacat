@@ -35,30 +35,6 @@ I build tools for AI-assisted development: better context, better coordination, 
 
 The work centered on ground-up organizing: helping people coordinate groups, share resources, find spaces, spread the word, and make local co-learning visible. The old FAQ framed it as tools for "hands-on learning activities at the neighborhood level" and a network for co-creation, creative projects, wellness workshops, and community-led making.
 
-## Marquee Studies
-
-Five README-safe SVG studies from [github-marquee](https://github.com/ratacat/github-marquee).
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ratacat/github-marquee/main/examples/terminal-pulse.svg" alt="Terminal pulse marquee" width="100%">
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ratacat/github-marquee/main/examples/split-flap-departures.svg" alt="Split-flap departures marquee" width="100%">
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ratacat/github-marquee/main/examples/radar-sweep.svg" alt="Radar sweep marquee" width="100%">
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ratacat/github-marquee/main/examples/matrix-diff.svg" alt="Matrix diff marquee" width="100%">
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ratacat/github-marquee/main/examples/alien-protocol.svg" alt="Alien protocol marquee" width="100%">
-</p>
-
 ## Public Work Index
 
 ### Agent Infrastructure
