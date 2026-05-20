@@ -16,6 +16,7 @@ I build tools for AI-assisted development: better context, better coordination, 
 
 | Project | What it does |
 | --- | --- |
+| [html-home](https://github.com/ratacat/html-home) | Gives repo-local HTML artifacts one localhost front door through manifests, a local index, and a read-only server. |
 | [pro-cli](https://github.com/ratacat/pro-cli) | Gives agents a JSON-first CLI for ChatGPT Pro and Deep Research through a logged-in browser session. |
 | [raindrop-cli](https://github.com/ratacat/raindrop-cli) | Exposes Raindrop bookmarks through a clean agent-friendly CLI. |
 | [discive](https://github.com/ratacat/discive) | Experiments with disciplined discovery and command-line research flows. |
