@@ -17,15 +17,15 @@ I build tools for AI-assisted development: better context, better coordination, 
 | Project | What it does |
 | --- | --- |
 | [html-home](https://github.com/ratacat/html-home) | Gives repo-local HTML artifacts one localhost front door through manifests, a local index, and a read-only server. |
-| [pro-cli](https://github.com/ratacat/pro-cli) | Gives agents a JSON-first CLI for ChatGPT Pro and Deep Research through a logged-in browser session. |
+| [pro-cli](https://github.com/ratacat/pro-cli) | ChatGPT Pro and Deep Research in your terminal. |
 | [raindrop-cli](https://github.com/ratacat/raindrop-cli) | Exposes Raindrop bookmarks through a clean agent-friendly CLI. |
-| [discive](https://github.com/ratacat/discive) | Experiments with disciplined discovery and command-line research flows. |
-| [extra-eyes](https://github.com/ratacat/extra-eyes) | Runs parallel review passes so agents can catch misses in each other's work. |
-| [liquid-mail](https://github.com/ratacat/liquid-mail) | Turns agent coordination logs into searchable project memory. |
+| [discive](https://github.com/ratacat/discive) | Downloads entire Discord channels for local archives and analysis. |
+| [extra-eyes](https://github.com/ratacat/extra-eyes) | Spins up N pair programmers with custom profiles to give instant feedback to one context window. |
+| [liquid-mail](https://github.com/ratacat/liquid-mail) | Shared mailboxes for agents: progress logs, decisions, and coordination context that survive across sessions. |
 | [knb](https://github.com/ratacat/knb) | Builds knowledge-base workflows for research, synthesis, and durable context. |
-| [salt-ai](https://github.com/ratacat/salt-ai) | Explores small agent tools and experiments around AI-assisted work. |
+| [salt-ai](https://github.com/ratacat/salt-ai) | A tiny utility for salting LLM responses. |
 | [annas-archive-ebooks](https://github.com/ratacat/annas-archive-ebooks) | Adds ebook search and download workflows for agent-assisted research. |
-| [claude-skills](https://github.com/ratacat/claude-skills) | Collects reusable agent skills and tooling for building them from source material. |
+| [claude-skills](https://github.com/ratacat/claude-skills) | A collection of some of my favorite agent skills. |
 | [ascii-love](https://github.com/ratacat/ascii-love) | Plays with terminal-native visual interfaces and ASCII display work. |
 
 ## Villagecraft
